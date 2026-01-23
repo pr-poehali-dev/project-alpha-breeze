@@ -1,5 +1,6 @@
 import { WaitlistSignup } from "@/components/WaitlistSignup"
 import { Toaster } from "@/components/ui/toaster"
+import { Helmet } from "react-helmet"
 
 const backgroundStyle = `
   .bg-pattern {
@@ -24,18 +25,29 @@ const backgroundStyle = `
 
 export default function Index() {
   return (
-    <main
-      className="min-h-screen flex items-center justify-center"
-      style={{
-        background: "radial-gradient(circle at center, #1E40AF, #000000)",
-      }}
-    >
-      <style>{backgroundStyle}</style>
-      <div className="bg-pattern"></div>
-      <div className="content w-full">
-        <WaitlistSignup />
-      </div>
-      <Toaster />
-    </main>
+    <>
+      <Helmet>
+        <meta property="og:image" content="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/8c4c8e61-4d8f-4a2a-8246-9682682b951c.jpg" />
+        <meta property="og:image:width" content="2050" />
+        <meta property="og:image:height" content="1080" />
+        <meta property="og:title" content="Профессиональное бурение - Донецк, ДНР" />
+        <meta property="og:description" content="15+ лет опыта, 500+ выполненных работ. Бурение скважин, алмазное бурение, услуги мини-экскаватора" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/8c4c8e61-4d8f-4a2a-8246-9682682b951c.jpg" />
+      </Helmet>
+      <main
+        className="min-h-screen flex items-center justify-center"
+        style={{
+          background: "radial-gradient(circle at center, #1E40AF, #000000)",
+        }}
+      >
+        <style>{backgroundStyle}</style>
+        <div className="bg-pattern"></div>
+        <div className="content w-full">
+          <WaitlistSignup />
+        </div>
+        <Toaster />
+      </main>
+    </>
   )
 }
