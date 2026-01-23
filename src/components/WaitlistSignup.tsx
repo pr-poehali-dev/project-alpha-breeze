@@ -135,6 +135,114 @@ export function WaitlistSignup() {
         </div>
       </div>
 
+      {/* Секция отзывов */}
+      <div className="max-w-6xl mx-auto mt-12 mb-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-white mb-8">
+          Отзывы наших клиентов
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Отзыв 1 */}
+          <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+            <div className="flex items-start gap-4 mb-4">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client1.jpg"
+                alt="Александр"
+                className="w-16 h-16 rounded-full object-cover border-2 border-blue-400"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64"%3E%3Crect fill="%234B5563" width="64" height="64"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EАК%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div>
+                <h3 className="text-lg font-semibold text-white">Александр Козлов</h3>
+                <div className="flex gap-1 mt-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={16} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              Ребята пробурили скважину за 2 дня. Работали аккуратно, участок после работы убрали. Вода отличная, напор хороший. Рекомендую!
+            </p>
+          </div>
+
+          {/* Отзыв 2 */}
+          <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+            <div className="flex items-start gap-4 mb-4">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client2.jpg"
+                alt="Михаил"
+                className="w-16 h-16 rounded-full object-cover border-2 border-blue-400"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64"%3E%3Crect fill="%234B5563" width="64" height="64"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EМП%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div>
+                <h3 className="text-lg font-semibold text-white">Михаил Петров</h3>
+                <div className="flex gap-1 mt-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={16} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              Делали алмазное бурение под вентиляцию. Быстро, чисто, профессионально. Цена адекватная. Спасибо за качественную работу!
+            </p>
+          </div>
+
+          {/* Отзыв 3 */}
+          <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+            <div className="flex items-start gap-4 mb-4">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client3.jpg"
+                alt="Елена"
+                className="w-16 h-16 rounded-full object-cover border-2 border-blue-400"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64"%3E%3Crect fill="%234B5563" width="64" height="64"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EЕС%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div>
+                <h3 className="text-lg font-semibold text-white">Елена Смирнова</h3>
+                <div className="flex gap-1 mt-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={16} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              Нанимали мини-экскаватор для земляных работ. Оператор опытный, работал чётко по плану. Всё сделали за день. Очень довольны результатом!
+            </p>
+          </div>
+
+          {/* Отзыв 4 */}
+          <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+            <div className="flex items-start gap-4 mb-4">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client4.jpg"
+                alt="Дмитрий"
+                className="w-16 h-16 rounded-full object-cover border-2 border-blue-400"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64"%3E%3Crect fill="%234B5563" width="64" height="64"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EДВ%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div>
+                <h3 className="text-lg font-semibold text-white">Дмитрий Волков</h3>
+                <div className="flex gap-1 mt-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={16} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              Обращался для подрядных работ на стройке. Команда профессиональная, все сделали в срок и качественно. Буду обращаться ещё!
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Футер с соцсетями */}
       <div className="pt-8 flex justify-center space-x-6">
         <SocialIcon
