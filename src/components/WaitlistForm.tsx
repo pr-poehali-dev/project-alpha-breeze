@@ -9,14 +9,14 @@ interface WaitlistFormProps {
 }
 
 export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
-  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   const [isPending, setIsPending] = useState(false)
   const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!email) return
+    if (!phone) return
 
     setIsPending(true)
 
@@ -31,7 +31,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
     })
 
     onSuccess(1)
-    setEmail('')
+    setPhone('')
     setIsPending(false)
   }
 
@@ -39,14 +39,14 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
     <form onSubmit={handleSubmit} className="w-full space-y-4 mb-8">
       <div className="flex overflow-hidden rounded-xl bg-white/5 p-1 ring-1 ring-white/20 focus-within:ring-2 focus-within:ring-blue-500">
         <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Введите ваш email"
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder="Введите ваш телефон"
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          aria-describedby="email-error"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          aria-describedby="phone-error"
           className="w-full border-0 bg-transparent text-white placeholder:text-gray-400 focus:ring-0 focus:border-transparent focus-visible:border-transparent focus:outline-none active:ring-0 active:outline-none focus-visible:ring-0 focus-visible:outline-none active:border-transparent focus-visible:ring-offset-0"
         />
         <Button
