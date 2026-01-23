@@ -33,7 +33,7 @@ export function WaitlistSignup() {
                 <Icon name="Drill" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
                 <div className="text-left">
                   <h3 className="text-lg font-semibold text-white mb-1">Бурение скважин под ключ</h3>
-                  <p className="text-sm text-gray-400">Установка систем водоснабжения, обустройство скважин</p>
+                  <p className="text-sm text-gray-400">Поиск воды, установка систем водоснабжения, обустройство скважин</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
