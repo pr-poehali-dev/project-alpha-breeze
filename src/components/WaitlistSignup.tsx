@@ -29,32 +29,11 @@ export function WaitlistSignup() {
               БЫСТРО, КАЧЕСТВЕННО, ЭФФЕКТИВНО
             </p>
             
-            <div className="flex items-center justify-center gap-2 mb-4 p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
+            <div className="flex items-center justify-center gap-2 mb-6 p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
               <Icon name="MapPin" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0" />
               <p className="text-base sm:text-lg font-medium text-gray-200 text-center">
                 Донецк, Макеевка, Харцызск и ближние регионы ДНР
               </p>
-            </div>
-
-            {/* Контактная информация */}
-            <div className="mb-6 space-y-3">
-              <a 
-                href="tel:+79999999999" 
-                className="flex items-center justify-center gap-3 p-4 bg-green-500/10 rounded-lg border border-green-400/20 hover:bg-green-500/20 transition-colors group"
-              >
-                <Icon name="Phone" fallback="Circle" size={24} className="text-green-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-lg font-semibold text-white">+7 (999) 999-99-99</span>
-              </a>
-              
-              <a 
-                href="https://wa.me/79999999999" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 p-4 bg-green-600/20 rounded-lg border border-green-500/30 hover:bg-green-600/30 transition-colors group"
-              >
-                <Icon name="MessageCircle" fallback="Circle" size={24} className="text-green-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-lg font-semibold text-white">Написать в WhatsApp</span>
-              </a>
             </div>
             <div className="space-y-3 mb-6">
               <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
