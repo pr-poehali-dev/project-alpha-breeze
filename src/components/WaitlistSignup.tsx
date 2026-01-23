@@ -57,7 +57,7 @@ export function WaitlistSignup() {
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/4af5953c-8f1a-4e5b-93ce-902e6710d01d.jpg" 
                 alt="Малогабаритная буровая установка"
-                className="w-full h-64 object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
 
