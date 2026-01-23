@@ -4,6 +4,12 @@ import { Input } from '@/components/ui/input'
 import Icon from '@/components/ui/icon'
 import { Loader2 } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 interface WaitlistFormProps {
   onSuccess: (count: number) => void;
@@ -81,13 +87,28 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
       <div className="text-center">
         <p className="text-gray-400 text-sm mb-3">или свяжитесь с нами</p>
         <div className="flex gap-3 justify-center">
-          <a
-            href="tel:+79494816485"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300"
-          >
-            <Icon name="Phone" size={20} />
-            Позвонить
-          </a>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300">
+                <Icon name="Phone" size={20} />
+                Позвонить
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-gray-900 border-gray-700">
+              <DropdownMenuItem asChild>
+                <a href="tel:+79494816485" className="flex items-center gap-2 cursor-pointer text-white hover:text-blue-300">
+                  <Icon name="Phone" size={16} />
+                  +7 (949) 481-64-85
+                </a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="tel:+79180445186" className="flex items-center gap-2 cursor-pointer text-white hover:text-blue-300">
+                  <Icon name="Phone" size={16} />
+                  +7 (918) 044-51-86
+                </a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <a
             href="https://t.me/+79494816485"
             target="_blank"
