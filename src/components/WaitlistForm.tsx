@@ -28,20 +28,44 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
 
     setIsPending(true)
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch('https://functions.poehali.dev/59d997b0-43b2-4f71-a432-d0a55ec2ec5d', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, phone }),
+      })
 
-    // Mock success response
-    toast({
-      title: "Заявка принята!",
-      description: "Мы свяжемся с вами в течение часа",
-      duration: 5000,
-    })
+      const data = await response.json()
 
-    onSuccess(1)
-    setName('')
-    setPhone('')
-    setIsPending(false)
+      if (response.ok && data.success) {
+        toast({
+          title: "Заявка принята!",
+          description: "Мы свяжемся с вами в течение часа",
+          duration: 5000,
+        })
+        onSuccess(1)
+        setName('')
+        setPhone('')
+      } else {
+        toast({
+          title: "Ошибка",
+          description: data.error || "Не удалось отправить заявку",
+          variant: "destructive",
+          duration: 5000,
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+        duration: 5000,
+      })
+    } finally {
+      setIsPending(false)
+    }
   }
 
   return (
