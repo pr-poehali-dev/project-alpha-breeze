@@ -85,6 +85,9 @@ def handler(event: dict, context) -> dict:
         email_sent = False
         email_error = None
         
+        print(f'Попытка отправки email с {email_from} на {email_to}')
+        print(f'Пароль установлен: {bool(email_password)}, длина: {len(email_password) if email_password else 0}')
+        
         if email_password:
             try:
                 with smtplib.SMTP_SSL('smtp.mail.ru', 465) as server:
