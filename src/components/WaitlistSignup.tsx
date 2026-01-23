@@ -53,19 +53,26 @@ export function WaitlistSignup() {
             </div>
 
             {/* Галерея работ */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-3 gap-3 mb-6">
               <div className="rounded-xl overflow-hidden border border-white/10">
                 <img 
                   src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/bb5c6e38-482f-42a4-bcaa-8562318172b0.jpg" 
                   alt="Алмазное бурение в бетоне"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-40 object-cover"
                 />
               </div>
               <div className="rounded-xl overflow-hidden border border-white/10">
                 <img 
                   src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/087eb7cf-bada-46a4-8f65-643d67945860.jpg" 
                   alt="Бурение скважины на участке"
-                  className="w-full h-48 object-cover"
+                  className="w-full h-40 object-cover"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-white/10">
+                <img 
+                  src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/794ee10a-6f37-49af-9520-cf10adf3d2a8.jpg" 
+                  alt="Работа мини-экскаватора Kubota"
+                  className="w-full h-40 object-cover"
                 />
               </div>
             </div>
