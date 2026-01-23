@@ -136,108 +136,233 @@ export function WaitlistSignup() {
       </div>
 
       {/* Секция отзывов */}
-      <div className="max-w-5xl mx-auto mt-12 mb-8 px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-white mb-8">
+      <div className="max-w-6xl mx-auto mt-12 mb-8 px-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-white mb-6">
           Отзывы наших клиентов
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {/* Отзыв 1 */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-            <div className="flex items-start gap-3 mb-3">
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client1.jpg"
                 alt="Ростислав"
-                className="w-12 h-12 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
                 onError={(e) => {
-                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48"%3E%3Crect fill="%234B5563" width="48" height="48"/%3E%3Ctext x="50%25" y="50%25" font-size="18" fill="white" text-anchor="middle" dy=".3em"%3EРЗ%3C/text%3E%3C/svg%3E'
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EРЗ%3C/text%3E%3C/svg%3E'
                 }}
               />
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-white">Ростислав Захарченко</h3>
-                <div className="flex gap-1 mt-1">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Ростислав Захарченко</h3>
+                <div className="flex gap-0.5 mt-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="Star" fallback="Circle" size={14} className="text-yellow-400 fill-yellow-400" />
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Ребята пробурили скважину за 2 дня. Работали аккуратно, участок после работы убрали. Вода отличная, напор хороший. Рекомендую!
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Пробурили скважину за 2 дня. Работали аккуратно, участок убрали. Вода отличная!
             </p>
           </div>
 
           {/* Отзыв 2 */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-            <div className="flex items-start gap-3 mb-3">
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client2.jpg"
                 alt="Богдан"
-                className="w-12 h-12 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
                 onError={(e) => {
-                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48"%3E%3Crect fill="%234B5563" width="48" height="48"/%3E%3Ctext x="50%25" y="50%25" font-size="18" fill="white" text-anchor="middle" dy=".3em"%3EБТ%3C/text%3E%3C/svg%3E'
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EБТ%3C/text%3E%3C/svg%3E'
                 }}
               />
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-white">Богдан Тимофеев</h3>
-                <div className="flex gap-1 mt-1">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Богдан Тимофеев</h3>
+                <div className="flex gap-0.5 mt-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="Star" fallback="Circle" size={14} className="text-yellow-400 fill-yellow-400" />
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Делали алмазное бурение под вентиляцию. Быстро, чисто, профессионально. Цена адекватная. Спасибо за качественную работу!
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Алмазное бурение под вентиляцию. Быстро, чисто, профессионально. Цена адекватная!
             </p>
           </div>
 
           {/* Отзыв 3 */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-            <div className="flex items-start gap-3 mb-3">
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client3.jpg"
                 alt="Виктория"
-                className="w-12 h-12 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
                 onError={(e) => {
-                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48"%3E%3Crect fill="%234B5563" width="48" height="48"/%3E%3Ctext x="50%25" y="50%25" font-size="18" fill="white" text-anchor="middle" dy=".3em"%3EВЛ%3C/text%3E%3C/svg%3E'
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EВЛ%3C/text%3E%3C/svg%3E'
                 }}
               />
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-white">Виктория Левченко</h3>
-                <div className="flex gap-1 mt-1">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Виктория Левченко</h3>
+                <div className="flex gap-0.5 mt-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="Star" fallback="Circle" size={14} className="text-yellow-400 fill-yellow-400" />
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Нанимали мини-экскаватор для земляных работ. Оператор опытный, работал чётко по плану. Всё сделали за день. Очень довольны результатом!
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Мини-экскаватор для земляных работ. Оператор опытный, всё сделали за день!
             </p>
           </div>
 
           {/* Отзыв 4 */}
-          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-            <div className="flex items-start gap-3 mb-3">
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client4.jpg"
                 alt="Станислав"
-                className="w-12 h-12 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
                 onError={(e) => {
-                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48"%3E%3Crect fill="%234B5563" width="48" height="48"/%3E%3Ctext x="50%25" y="50%25" font-size="18" fill="white" text-anchor="middle" dy=".3em"%3EСГ%3C/text%3E%3C/svg%3E'
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EСГ%3C/text%3E%3C/svg%3E'
                 }}
               />
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-white">Станислав Гордиенко</h3>
-                <div className="flex gap-1 mt-1">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Станислав Гордиенко</h3>
+                <div className="flex gap-0.5 mt-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="Star" fallback="Circle" size={14} className="text-yellow-400 fill-yellow-400" />
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Обращался для подрядных работ на стройке. Команда профессиональная, все сделали в срок и качественно. Буду обращаться ещё!
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Подрядные работы на стройке. Команда профессиональная, всё в срок и качественно!
+            </p>
+          </div>
+
+          {/* Отзыв 5 */}
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client5.jpg"
+                alt="Ярослав"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EЯК%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Ярослав Ковальчук</h3>
+                <div className="flex gap-0.5 mt-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Бурили отверстия в фундаменте. Точная работа, никаких трещин. Молодцы!
+            </p>
+          </div>
+
+          {/* Отзыв 6 */}
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client6.jpg"
+                alt="Анастасия"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EАН%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Анастасия Новикова</h3>
+                <div className="flex gap-0.5 mt-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Скважина работает безупречно уже год. Спасибо за надёжность и гарантию!
+            </p>
+          </div>
+
+          {/* Отзыв 7 */}
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client7.jpg"
+                alt="Валентин"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EВШ%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Валентин Шевченко</h3>
+                <div className="flex gap-0.5 mt-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Экскаватор помог выкопать траншею под канализацию. Быстро и недорого!
+            </p>
+          </div>
+
+          {/* Отзыв 8 */}
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client8.jpg"
+                alt="Светлана"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EСМ%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Светлана Мельник</h3>
+                <div className="flex gap-0.5 mt-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Сверлили отверстия под кондиционер. Работали тихо и чисто. Рекомендую!
+            </p>
+          </div>
+
+          {/* Отзыв 9 */}
+          <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+            <div className="flex items-start gap-2 mb-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/client9.jpg"
+                alt="Геннадий"
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 flex-shrink-0"
+                onError={(e) => {
+                  e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Crect fill="%234B5563" width="40" height="40"/%3E%3Ctext x="50%25" y="50%25" font-size="16" fill="white" text-anchor="middle" dy=".3em"%3EГП%3C/text%3E%3C/svg%3E'
+                }}
+              />
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-white truncate">Геннадий Полтавец</h3>
+                <div className="flex gap-0.5 mt-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Icon key={i} name="Star" fallback="Circle" size={12} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-300 leading-relaxed">
+              Комплексные работы по участку. От бурения до планировки. Всё под ключ!
             </p>
           </div>
         </div>
