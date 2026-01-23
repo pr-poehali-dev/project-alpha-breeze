@@ -70,7 +70,7 @@ export function WaitlistSignup() {
               </div>
               <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
                 <img 
-                  src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/794ee10a-6f37-49af-9520-cf10adf3d2a8.jpg" 
+                  src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/2943819d-ef84-4e7d-ba22-6f90748c12b7.jpg" 
                   alt="Работа мини-экскаватора Kubota"
                   className="w-full h-auto object-contain"
                 />
