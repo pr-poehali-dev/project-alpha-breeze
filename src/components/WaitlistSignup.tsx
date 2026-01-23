@@ -22,7 +22,7 @@ export function WaitlistSignup() {
         <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Левая колонка - Услуги */}
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-gray-200 to-gray-600 text-center">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-100 to-gray-400 text-center">
               Профессиональное бурение
             </h2>
             <p className="text-xl sm:text-2xl font-bold text-blue-400 mb-6 tracking-wide text-center">
