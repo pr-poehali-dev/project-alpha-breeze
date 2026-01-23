@@ -79,14 +79,25 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
       </form>
       
       <div className="text-center">
-        <p className="text-gray-400 text-sm mb-2">или</p>
-        <a
-          href="tel:+79999999999"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300"
-        >
-          <Icon name="Phone" size={20} />
-          Позвонить сейчас
-        </a>
+        <p className="text-gray-400 text-sm mb-3">или свяжитесь с нами</p>
+        <div className="flex gap-3 justify-center">
+          <a
+            href="tel:+79494816485"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300"
+          >
+            <Icon name="Phone" size={20} />
+            Позвонить
+          </a>
+          <a
+            href="https://t.me/+79494816485"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300"
+          >
+            <Icon name="Send" size={20} />
+            Telegram
+          </a>
+        </div>
       </div>
     </div>
   )
