@@ -124,7 +124,7 @@ export function WaitlistSignup() {
                 <Avatar initials="МП" index={1} />
                 <Avatar initials="ЕС" index={2} />
               </div>
-              <p className="text-white font-semibold">{waitlistCount}+ клиентов доверяют нам</p>
+              <p className="text-white font-semibold">500+ клиентов доверяют нам</p>
             </div>
           </div>
 
