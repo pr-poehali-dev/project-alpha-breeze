@@ -24,9 +24,17 @@ export function WaitlistSignup() {
           </h2>
         </div>
         <div>
-          <p className="text-lg sm:text-xl mb-8 text-gray-300">
+          <p className="text-lg sm:text-xl mb-6 text-gray-300">
             Алмазное бурение, услуги мини-экскаватора, бурение скважин. Быстро, качественно, эффективно! Оставьте заявку — перезвоним в течение часа.
           </p>
+          <div className="flex flex-col gap-2 mb-8">
+            <a href="tel:+79494816485" className="text-xl font-semibold text-white hover:text-blue-300 transition-colors">
+              +7 (949) 481-64-85
+            </a>
+            <a href="tel:+79180445186" className="text-xl font-semibold text-white hover:text-blue-300 transition-colors">
+              +7 (918) 044-51-86
+            </a>
+          </div>
         </div>
         <div className="w-full">
           <WaitlistForm onSuccess={handleSuccess} />
