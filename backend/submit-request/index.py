@@ -2,9 +2,7 @@ import json
 import os
 import urllib.request
 import urllib.parse
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import re
 
 
 def handler(event: dict, context) -> dict:
@@ -47,66 +45,12 @@ def handler(event: dict, context) -> dict:
                 'body': json.dumps({'error': 'Имя и телефон обязательны'})
             }
 
-        # Отправка на email
-        email_to = '89180445186@mail.ru'
-        email_from = os.environ.get('SMTP_EMAIL', 'noreply@poehali.dev')
-        email_password = os.environ.get('SMTP_PASSWORD', '')
-        
-        msg = MIMEMultipart('alternative')
-        msg['Subject'] = f'Новая заявка на бурение от {name}'
-        msg['From'] = email_from
-        msg['To'] = email_to
-        
-        text = f"""Новая заявка на бурение скважин!
-
-Имя: {name}
-Телефон: {phone}
-
-Заявка отправлена с сайта профессионального бурения.
-"""
-        
-        html = f"""<html>
-<head></head>
-<body>
-<h2 style="color: #2563eb;">🔔 Новая заявка на бурение скважин!</h2>
-<p><strong>👤 Имя:</strong> {name}</p>
-<p><strong>📞 Телефон:</strong> <a href="tel:{phone}">{phone}</a></p>
-<hr>
-<p style="color: #666; font-size: 12px;">Заявка отправлена с сайта профессионального бурения</p>
-</body>
-</html>
-"""
-        
-        part1 = MIMEText(text, 'plain')
-        part2 = MIMEText(html, 'html')
-        msg.attach(part1)
-        msg.attach(part2)
-        
-        email_sent = False
-        email_error = None
-        
-        print(f'Попытка отправки email с {email_from} на {email_to}')
-        print(f'Пароль установлен: {bool(email_password)}, длина: {len(email_password) if email_password else 0}')
-        
-        if email_password:
-            try:
-                with smtplib.SMTP_SSL('smtp.mail.ru', 465) as server:
-                    server.login(email_from, email_password)
-                    server.send_message(msg)
-                    email_sent = True
-                    print(f'Email успешно отправлен на {email_to}')
-            except Exception as e:
-                email_error = str(e)
-                print(f'Ошибка отправки email: {email_error}')
-        
         # Telegram уведомление
         telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip()
         chat_id = os.environ.get('TELEGRAM_CHAT_ID', '').strip()
         
         # Очистка токена от возможного лишнего текста
         if telegram_token:
-            # Ищем паттерн токена: числа:буквы/символы
-            import re
             token_match = re.search(r'\d+:[A-Za-z0-9_-]+', telegram_token)
             if token_match:
                 telegram_token = token_match.group(0)
