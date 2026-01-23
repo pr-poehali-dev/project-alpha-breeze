@@ -54,25 +54,25 @@ export function WaitlistSignup() {
 
             {/* Галерея работ */}
             <div className="grid grid-cols-3 gap-3 mb-6">
-              <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+              <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-48 flex items-center justify-center">
                 <img 
                   src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/bb5c6e38-482f-42a4-bcaa-8562318172b0.jpg" 
                   alt="Алмазное бурение в бетоне"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+              <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-48 flex items-center justify-center">
                 <img 
                   src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/087eb7cf-bada-46a4-8f65-643d67945860.jpg" 
                   alt="Бурение скважины на участке"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+              <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-48 flex items-center justify-center">
                 <img 
                   src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/2943819d-ef84-4e7d-ba22-6f90748c12b7.jpg" 
                   alt="Работа мини-экскаватора Kubota"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
