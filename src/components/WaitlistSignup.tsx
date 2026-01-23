@@ -52,6 +52,15 @@ export function WaitlistSignup() {
               </div>
             </div>
 
+            {/* Фотография работы */}
+            <div className="mb-6 rounded-xl overflow-hidden border border-white/10">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/0ec51bb4-5cda-4c5b-9941-885d3fc990f1.jpg" 
+                alt="Профессиональное бурение скважин"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 <Avatar initials="АК" index={0} />
