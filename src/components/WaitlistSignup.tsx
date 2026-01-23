@@ -9,7 +9,7 @@ import { SocialIcon } from "./SocialIcon"
 import { WaitlistForm } from "./WaitlistForm"
 
 export function WaitlistSignup() {
-  const [waitlistCount, setWaitlistCount] = useState(100)
+  const [waitlistCount, setWaitlistCount] = useState(47)
 
   const handleSuccess = (count: number) => {
     setWaitlistCount(prev => prev + count)
@@ -20,12 +20,12 @@ export function WaitlistSignup() {
       <div className="flex-1 flex flex-col justify-center items-center text-center">
         <div>
           <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-br from-gray-200 to-gray-600">
-            Присоединяйтесь к Launchpad
+            Бурение скважин под ключ
           </h2>
         </div>
         <div>
           <p className="text-lg sm:text-xl mb-8 text-gray-300">
-            Станьте частью чего-то особенного. Присоединяйтесь к тысячам людей, которые уже получили ранний доступ к нашей революционной платформе.
+            Алмазное бурение, услуги мини-экскаватора, установка скважин. Быстро, качественно, эффективно! Оставьте заявку — перезвоним в течение часа.
           </p>
         </div>
         <div className="w-full">
@@ -38,7 +38,7 @@ export function WaitlistSignup() {
               <Avatar initials="МП" index={1} />
               <Avatar initials="ЕС" index={2} />
             </div>
-            <p className="text-white font-semibold">{waitlistCount}+ человек в списке ожидания</p>
+            <p className="text-white font-semibold">{waitlistCount}+ клиентов доверяют нам</p>
           </div>
         </div>
       </div>
