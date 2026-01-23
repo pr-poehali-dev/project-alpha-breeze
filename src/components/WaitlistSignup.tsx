@@ -94,7 +94,7 @@ export function WaitlistSignup() {
             {/* Преимущества команды */}
             <div className="grid grid-cols-2 gap-3 mb-6">
               <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">10+</div>
+                <div className="text-3xl font-bold text-blue-400 mb-1">15+</div>
                 <div className="text-sm text-gray-400">лет опыта</div>
               </div>
               <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
