@@ -70,7 +70,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
 
   return (
     <div className="w-full space-y-4 mb-8">
-      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 uppercase">
+      <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 uppercase text-center">
         Бесплатный расчёт стоимости
       </h3>
       <form onSubmit={handleSubmit} className="space-y-3">
