@@ -29,9 +29,9 @@ export function WaitlistSignup() {
               БЫСТРО, КАЧЕСТВЕННО, ЭФФЕКТИВНО
             </p>
             
-            <div className="flex items-center justify-center gap-2 mb-6 p-3 bg-blue-500/10 rounded-lg border border-blue-400/20">
-              <Icon name="MapPin" fallback="Circle" size={20} className="text-blue-400 flex-shrink-0" />
-              <p className="text-sm text-gray-300 text-center">
+            <div className="flex items-center justify-center gap-2 mb-6 p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
+              <Icon name="MapPin" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0" />
+              <p className="text-base sm:text-lg font-medium text-gray-200 text-center">
                 Донецк, Макеевка, Харцызск и ближние регионы ДНР
               </p>
             </div>
