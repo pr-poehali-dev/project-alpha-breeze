@@ -99,9 +99,11 @@ def handler(event: dict, context) -> dict:
                 email_error = str(e)
                 print(f'Ошибка отправки email: {email_error}')
         
-        # Telegram уведомление (опционально)
+        # Telegram уведомление
         telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
         chat_id = os.environ.get('TELEGRAM_CHAT_ID', '')
+        
+        print(f'Telegram токен установлен: {bool(telegram_token)}, Chat ID: {chat_id}')
 
         if telegram_token and chat_id:
             message = f"🔔 Новая заявка на бурение скважин!\n\n👤 Имя: {name}\n📞 Телефон: {phone}"
@@ -109,15 +111,15 @@ def handler(event: dict, context) -> dict:
             url = f"https://api.telegram.org/bot{telegram_token}/sendMessage"
             data = urllib.parse.urlencode({
                 'chat_id': chat_id,
-                'text': message,
-                'parse_mode': 'HTML'
+                'text': message
             }).encode('utf-8')
             
             try:
                 req = urllib.request.Request(url, data=data)
-                urllib.request.urlopen(req)
-            except Exception:
-                pass
+                response = urllib.request.urlopen(req)
+                print(f'Telegram уведомление отправлено успешно')
+            except Exception as e:
+                print(f'Ошибка отправки в Telegram: {str(e)}')
 
         return {
             'statusCode': 200,
