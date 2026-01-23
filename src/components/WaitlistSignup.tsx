@@ -39,7 +39,7 @@ export function WaitlistSignup() {
               <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
                 <Icon name="Sparkles" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
                 <div className="text-left">
-                  <h3 className="text-lg font-semibold text-white mb-1">Алмазное бурение</h3>
+                  <h3 className="text-lg font-semibold text-white mb-1">Алмазное бурение (сверление)</h3>
                   <p className="text-base text-gray-400">Точное бурение отверстий любой сложности: в бетоне, камне, кирпиче</p>
                 </div>
               </div>
