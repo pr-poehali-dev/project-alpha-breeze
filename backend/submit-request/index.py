@@ -101,7 +101,11 @@ def handler(event: dict, context) -> dict:
         
         # Telegram уведомление
         telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
-        chat_id = os.environ.get('TELEGRAM_CHAT_ID', '')
+        chat_id = os.environ.get('TELEGRAM_CHAT_ID', '').strip()
+        
+        # Очистка chat_id от возможного текста
+        if chat_id and ':' in chat_id:
+            chat_id = chat_id.split(':')[-1].strip()
         
         print(f'Telegram токен установлен: {bool(telegram_token)}, Chat ID: {chat_id}')
 
