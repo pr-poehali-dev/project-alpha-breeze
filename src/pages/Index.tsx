@@ -27,13 +27,13 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <meta property="og:image" content="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/2cf3e50c-fc1a-43a1-bf04-df9d16fd3b92.jpg" />
+        <meta property="og:image" content="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/a618b462-5781-4a13-b859-9c39372ad692.jpg" />
         <meta property="og:image:width" content="2050" />
         <meta property="og:image:height" content="1080" />
         <meta property="og:title" content="Профессиональное бурение - Донецк, Макеевка, Харцызск, ДНР" />
         <meta property="og:description" content="15+ лет опыта, 500+ выполненных работ. Бурение скважин, алмазное бурение, услуги мини-экскаватора, подрядные работы" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/2cf3e50c-fc1a-43a1-bf04-df9d16fd3b92.jpg" />
+        <meta name="twitter:image" content="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/a618b462-5781-4a13-b859-9c39372ad692.jpg" />
       </Helmet>
       <main
         className="min-h-screen flex items-center justify-center"
