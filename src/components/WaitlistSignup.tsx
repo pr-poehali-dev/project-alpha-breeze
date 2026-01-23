@@ -37,17 +37,17 @@ export function WaitlistSignup() {
                 </div>
               </div>
               <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
-                <Icon name="Construction" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
-                <div className="text-left">
-                  <h3 className="text-lg font-semibold text-white mb-1">Услуги мини-экскаватора</h3>
-                  <p className="text-sm text-gray-400">Земляные работы, рытье траншей, планировка участка</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
                 <Icon name="Sparkles" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
                 <div className="text-left">
                   <h3 className="text-lg font-semibold text-white mb-1">Алмазное бурение</h3>
                   <p className="text-sm text-gray-400">Точное бурение отверстий любой сложности: в бетоне, камне, кирпиче</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
+                <Icon name="Construction" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
+                <div className="text-left">
+                  <h3 className="text-lg font-semibold text-white mb-1">Услуги мини-экскаватора</h3>
+                  <p className="text-sm text-gray-400">Земляные работы, рытье траншей, планировка участка</p>
                 </div>
               </div>
             </div>
