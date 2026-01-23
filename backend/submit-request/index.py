@@ -45,25 +45,9 @@ def handler(event: dict, context) -> dict:
                 'body': json.dumps({'error': 'Имя и телефон обязательны'})
             }
 
-        # Telegram уведомление
-        telegram_token_raw = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip()
-        chat_id = os.environ.get('TELEGRAM_CHAT_ID', '').strip()
-        
-        print(f'Исходный токен (первые 50 символов): {telegram_token_raw[:50]}')
-        
-        # Очистка токена от возможного лишнего текста
-        telegram_token = telegram_token_raw
-        if telegram_token:
-            token_match = re.search(r'\d+:[A-Za-z0-9_-]+', telegram_token)
-            if token_match:
-                telegram_token = token_match.group(0)
-                print(f'Токен после очистки найден: {telegram_token[:20]}...')
-            else:
-                print(f'Не удалось извлечь токен по паттерну')
-        
-        # Очистка chat_id от возможного текста
-        if chat_id:
-            chat_id = re.sub(r'[^\d]', '', chat_id)
+        # Telegram уведомление - используем правильные значения
+        telegram_token = '8388920938:AAE8MJPJMYvZXCJUBsCZjatFIwwhQLKnY10'
+        chat_id = '5055798508'
         
         print(f'Telegram токен установлен: {bool(telegram_token)}, Chat ID: {chat_id}')
 
