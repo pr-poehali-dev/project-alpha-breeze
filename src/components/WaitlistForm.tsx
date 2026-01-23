@@ -134,7 +134,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
             </DropdownMenuContent>
           </DropdownMenu>
           <a
-            href="https://t.me/+79494816485"
+            href="https://t.me/+79180445186"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300"
