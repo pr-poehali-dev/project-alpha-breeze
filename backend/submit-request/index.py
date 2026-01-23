@@ -82,13 +82,19 @@ def handler(event: dict, context) -> dict:
         msg.attach(part1)
         msg.attach(part2)
         
+        email_sent = False
+        email_error = None
+        
         if email_password:
             try:
                 with smtplib.SMTP_SSL('smtp.mail.ru', 465) as server:
                     server.login(email_from, email_password)
                     server.send_message(msg)
-            except Exception:
-                pass
+                    email_sent = True
+                    print(f'Email успешно отправлен на {email_to}')
+            except Exception as e:
+                email_error = str(e)
+                print(f'Ошибка отправки email: {email_error}')
         
         # Telegram уведомление (опционально)
         telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
