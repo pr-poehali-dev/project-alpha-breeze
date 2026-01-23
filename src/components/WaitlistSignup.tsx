@@ -57,6 +57,13 @@ export function WaitlistSignup() {
                   <p className="text-base text-gray-400">Земляные работы, рытье траншей, планировка участка</p>
                 </div>
               </div>
+              <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
+                <Icon name="Wrench" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
+                <div className="text-left">
+                  <h3 className="text-lg font-semibold text-white mb-1">Подрядные работы любой сложности</h3>
+                  <p className="text-base text-gray-400">Комплексное выполнение строительных и монтажных работ</p>
+                </div>
+              </div>
             </div>
 
             {/* Галерея работ */}
