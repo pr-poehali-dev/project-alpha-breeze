@@ -7,6 +7,7 @@ import { LinkedInIcon } from "./icons/linkedin-icon"
 import { Avatar } from "./Avatar"
 import { SocialIcon } from "./SocialIcon"
 import { WaitlistForm } from "./WaitlistForm"
+import Icon from "@/components/ui/icon"
 
 export function WaitlistSignup() {
   const [waitlistCount, setWaitlistCount] = useState(47)
@@ -19,14 +20,26 @@ export function WaitlistSignup() {
     <div className="w-full max-w-xl mx-auto p-8 flex flex-col justify-between min-h-screen">
       <div className="flex-1 flex flex-col justify-center items-center text-center">
         <div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-br from-gray-200 to-gray-600">
-            Бурение скважин под ключ
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-br from-gray-200 to-gray-600">
+            Профессиональное бурение
           </h2>
         </div>
-        <div>
-          <p className="text-lg sm:text-xl mb-8 text-gray-300">
-            Алмазное бурение, услуги мини-экскаватора, бурение скважин. Быстро, качественно, эффективно! Оставьте заявку — перезвоним в течение часа.
-          </p>
+        <div className="mb-8 w-full max-w-md">
+          <div className="flex items-start gap-3 mb-4 p-4 bg-white/5 rounded-xl border border-white/10">
+            <Icon name="Drill" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
+            <div className="text-left">
+              <h3 className="text-lg font-semibold text-white mb-1">Бурение скважин под ключ</h3>
+              <p className="text-sm text-gray-400">Алмазное бурение, установка систем водоснабжения</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
+            <Icon name="Construction" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
+            <div className="text-left">
+              <h3 className="text-lg font-semibold text-white mb-1">Услуги мини-экскаватора</h3>
+              <p className="text-sm text-gray-400">Земляные работы, рытье траншей, планировка участка</p>
+            </div>
+          </div>
+          <p className="text-center text-gray-300 mt-6">Быстро, качественно, эффективно! Оставьте заявку — перезвоним в течение часа.</p>
         </div>
         <div className="w-full">
           <WaitlistForm onSuccess={handleSuccess} />
