@@ -28,6 +28,13 @@ export function WaitlistSignup() {
             <p className="text-xl sm:text-2xl font-bold text-blue-400 mb-6 tracking-wide text-center">
               БЫСТРО, КАЧЕСТВЕННО, ЭФФЕКТИВНО
             </p>
+            
+            <div className="flex items-center justify-center gap-2 mb-6 p-3 bg-blue-500/10 rounded-lg border border-blue-400/20">
+              <Icon name="MapPin" fallback="Circle" size={20} className="text-blue-400 flex-shrink-0" />
+              <p className="text-sm text-gray-300 text-center">
+                Донецк, Макеевка, Харцызск и ближние регионы ДНР
+              </p>
+            </div>
             <div className="space-y-3 mb-6">
               <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
                 <Icon name="Drill" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
