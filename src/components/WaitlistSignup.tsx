@@ -19,8 +19,8 @@ export function WaitlistSignup() {
   return (
     <div className="w-full min-h-screen p-4 sm:p-8 flex flex-col">
       <div className="flex-1 flex items-center justify-center">
-        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Левая колонка - Услуги */}
+        <div className="w-full max-w-4xl">
+          {/* Контент */}
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-100 to-gray-400 text-center">
               Профессиональное бурение
@@ -118,7 +118,7 @@ export function WaitlistSignup() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-3">
+            <div className="flex items-center justify-end gap-3 mb-8">
               <div className="flex -space-x-2">
                 <Avatar initials="АК" index={0} />
                 <Avatar initials="МП" index={1} />
@@ -126,10 +126,8 @@ export function WaitlistSignup() {
               </div>
               <p className="text-white font-semibold">500+ клиентов доверяют нам</p>
             </div>
-          </div>
 
-          {/* Правая колонка - Форма */}
-          <div className="flex flex-col justify-center">
+            {/* Форма */}
             <WaitlistForm onSuccess={handleSuccess} />
           </div>
         </div>
