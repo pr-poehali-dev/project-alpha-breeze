@@ -3,7 +3,6 @@ import { ContactHeader } from "./ContactHeader"
 import { CompanyStats } from "./CompanyStats"
 import { ServiceMenu, type ServiceTab } from "./ServiceMenu"
 import { ServiceContent } from "./ServiceContent"
-import { TestimonialsSection } from "./TestimonialsSection"
 import { Reviews } from "./Reviews"
 
 export function WaitlistSignup() {
@@ -25,7 +24,6 @@ export function WaitlistSignup() {
           <Reviews />
         </div>
       </div>
-      <TestimonialsSection />
     </div>
   )
 }
