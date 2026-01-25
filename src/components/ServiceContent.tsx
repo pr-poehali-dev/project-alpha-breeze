@@ -20,11 +20,12 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
           
-          <div className="flex items-center justify-center gap-2 mb-6 p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
-            <Icon name="MapPin" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0" />
-            <p className="text-base sm:text-lg font-medium text-gray-200 text-center">
-              Донецк, Макеевка, Харцызск и ближние регионы ДНР
-            </p>
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
+            <img 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/087eb7cf-bada-46a4-8f65-643d67945860.jpg" 
+              alt="Бурение скважины на участке"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="space-y-3 mb-6">
@@ -69,11 +70,12 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ТОЧНОЕ СВЕРЛЕНИЕ БЕЗ ПЫЛИ И ВИБРАЦИИ
           </p>
           
-          <div className="flex items-center justify-center gap-2 mb-6 p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
-            <Icon name="MapPin" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0" />
-            <p className="text-base sm:text-lg font-medium text-gray-200 text-center">
-              Донецк, Макеевка, Харцызск и ближние регионы ДНР
-            </p>
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
+            <img 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/bb5c6e38-482f-42a4-bcaa-8562318172b0.jpg" 
+              alt="Алмазное бурение в бетоне"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="space-y-3 mb-6">
@@ -118,11 +120,12 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЗЕМЛЯНЫЕ РАБОТЫ ЛЮБОЙ СЛОЖНОСТИ
           </p>
           
-          <div className="flex items-center justify-center gap-2 mb-6 p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
-            <Icon name="MapPin" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0" />
-            <p className="text-base sm:text-lg font-medium text-gray-200 text-center">
-              Донецк, Макеевка, Харцызск и ближние регионы ДНР
-            </p>
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
+            <img 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/2943819d-ef84-4e7d-ba22-6f90748c12b7.jpg" 
+              alt="Работа мини-экскаватора Kubota"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="space-y-3 mb-6">
@@ -167,11 +170,12 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             КОМПЛЕКСНОЕ ВЫПОЛНЕНИЕ РАБОТ ПОД КЛЮЧ
           </p>
           
-          <div className="flex items-center justify-center gap-2 mb-6 p-4 bg-blue-500/10 rounded-lg border border-blue-400/20">
-            <Icon name="MapPin" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0" />
-            <p className="text-base sm:text-lg font-medium text-gray-200 text-center">
-              Донецк, Макеевка, Харцызск и ближние регионы ДНР
-            </p>
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
+            <img 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/bb5c6e38-482f-42a4-bcaa-8562318172b0.jpg" 
+              alt="Подрядные строительные работы"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="space-y-3 mb-6">
@@ -206,30 +210,6 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </div>
         </>
       )}
-
-      <div className="grid grid-cols-3 gap-3 mb-6">
-        <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-48 flex items-center justify-center">
-          <img 
-            src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/bb5c6e38-482f-42a4-bcaa-8562318172b0.jpg" 
-            alt="Алмазное бурение в бетоне"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-48 flex items-center justify-center">
-          <img 
-            src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/087eb7cf-bada-46a4-8f65-643d67945860.jpg" 
-            alt="Бурение скважины на участке"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-48 flex items-center justify-center">
-          <img 
-            src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/2943819d-ef84-4e7d-ba22-6f90748c12b7.jpg" 
-            alt="Работа мини-экскаватора Kubota"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
         <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">

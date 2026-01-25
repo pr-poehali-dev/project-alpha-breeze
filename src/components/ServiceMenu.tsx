@@ -17,7 +17,7 @@ export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps
 
   return (
     <div className="mb-8">
-      <h3 className="text-sm font-semibold text-gray-400 text-center mb-4">УСЛУГИ</h3>
+      <h3 className="text-2xl sm:text-3xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-300 to-blue-500">УСЛУГИ</h3>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {services.map((service) => (
           <button
