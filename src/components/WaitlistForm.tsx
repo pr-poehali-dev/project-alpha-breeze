@@ -18,13 +18,14 @@ interface WaitlistFormProps {
 export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [agreed, setAgreed] = useState(false)
   const [isPending, setIsPending] = useState(false)
   const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!name || !phone) return
+    if (!name || !phone || !agreed) return
 
     setIsPending(true)
 
@@ -98,10 +99,32 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
             className="w-full border-0 bg-transparent text-white placeholder:text-gray-400 focus:ring-0 focus:border-transparent focus-visible:border-transparent focus:outline-none active:ring-0 active:outline-none focus-visible:ring-0 focus-visible:outline-none active:border-transparent focus-visible:ring-offset-0"
           />
         </div>
+        
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+            className="mt-1 w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+            required
+          />
+          <span className="text-sm text-gray-300 leading-relaxed">
+            Я согласен на обработку персональных данных в соответствии с{' '}
+            <a 
+              href="http://www.consultant.ru/document/cons_doc_LAW_61801/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              ФЗ-152
+            </a>
+          </span>
+        </label>
+
         <Button
           type="submit"
-          disabled={isPending}
-          className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 rounded-xl transition-all duration-300 ease-in-out focus:outline-none"
+          disabled={isPending || !agreed}
+          className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 rounded-xl transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isPending ? (
             <Loader2 className="h-5 w-5 animate-spin" />

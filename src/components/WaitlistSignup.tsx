@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { ContactHeader } from "./ContactHeader"
+import { CompanyStats } from "./CompanyStats"
 import { ServiceMenu, type ServiceTab } from "./ServiceMenu"
 import { ServiceContent } from "./ServiceContent"
 import { TestimonialsSection } from "./TestimonialsSection"
@@ -17,6 +18,7 @@ export function WaitlistSignup() {
       <div className="flex-1 flex items-center justify-center">
         <div className="w-full max-w-4xl">
           <ContactHeader />
+          <CompanyStats />
           <ServiceMenu activeService={activeService} onServiceChange={setActiveService} />
           <ServiceContent activeService={activeService} onSuccess={handleSuccess} />
         </div>

@@ -162,36 +162,8 @@ export function TestimonialsSection() {
 
       <footer className="w-full py-8 border-t border-white/10 mt-12">
         <div className="max-w-4xl mx-auto px-4 flex flex-col items-center gap-6">
-          <div className="flex gap-4">
-            <SocialIcon 
-              href="https://x.com" 
-              icon={<XIcon className="w-5 h-5" />}
-              label="X (Twitter)"
-            />
-            <SocialIcon 
-              href="https://instagram.com" 
-              icon={<InstagramIcon className="w-5 h-5" />}
-              label="Instagram"
-            />
-            <SocialIcon 
-              href="https://discord.com" 
-              icon={<DiscordIcon className="w-5 h-5" />}
-              label="Discord"
-            />
-            <SocialIcon 
-              href="https://facebook.com" 
-              icon={<FacebookIcon className="w-5 h-5" />}
-              label="Facebook"
-            />
-            <SocialIcon 
-              href="https://linkedin.com" 
-              icon={<LinkedInIcon className="w-5 h-5" />}
-              label="LinkedIn"
-            />
-          </div>
-          
           <p className="text-sm text-gray-400 text-center">
-            © 2025 Профессиональное бурение ДНР. Все права защищены.
+            © 2026 Профессиональное бурение скважин под воду ДНР. Все права защищены.
           </p>
         </div>
       </footer>
