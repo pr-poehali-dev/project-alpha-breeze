@@ -20,6 +20,18 @@ export function WaitlistSignup() {
     <div className="w-full min-h-screen p-4 sm:p-8 flex flex-col">
       <div className="flex-1 flex items-center justify-center">
         <div className="w-full max-w-4xl">
+          {/* Контакты в шапке */}
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-6 text-sm text-gray-300">
+            <a href="tel:+79494816485" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+              <Icon name="Phone" fallback="Circle" size={16} className="text-blue-400" />
+              <span>+7 (949) 481-64-85</span>
+            </a>
+            <div className="flex items-center gap-2">
+              <Icon name="Clock" fallback="Circle" size={16} className="text-blue-400" />
+              <span>ПН-ВС 08:00-20:00</span>
+            </div>
+          </div>
+
           {/* Контент */}
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-100 to-gray-400 text-center">
