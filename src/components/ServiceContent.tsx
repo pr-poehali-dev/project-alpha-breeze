@@ -39,7 +39,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
               <Icon name="Drill" fallback="Circle" size={24} className="text-blue-400 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-white mb-1">Бурение скважины</h3>
-                <p className="text-base text-gray-400">Современное оборудование для бурения на глубину до 150 метров</p>
+                <p className="text-base text-gray-400">Малогабаритная техника для бурения на глубину до 150 метров</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
@@ -210,7 +210,12 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
         </>
       )}
 
-      <WaitlistForm onSuccess={onSuccess} />
+      <WaitlistForm onSuccess={onSuccess} serviceType={
+        activeService === 'well-drilling' ? 'Бурение скважин под воду' :
+        activeService === 'diamond-drilling' ? 'Алмазное бурение' :
+        activeService === 'excavator' ? 'Услуги мини-экскаватора' :
+        'Подрядные работы'
+      } />
     </div>
   )
 }

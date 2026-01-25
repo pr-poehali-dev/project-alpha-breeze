@@ -13,9 +13,10 @@ import {
 
 interface WaitlistFormProps {
   onSuccess: (count: number) => void;
+  serviceType: string;
 }
 
-export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
+export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [agreed, setAgreed] = useState(false)
@@ -35,7 +36,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, phone }),
+        body: JSON.stringify({ name, phone, service: serviceType }),
       })
 
       const data = await response.json()
