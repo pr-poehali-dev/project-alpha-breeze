@@ -71,9 +71,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           
           <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
             <img 
-              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/bb5c6e38-482f-42a4-bcaa-8562318172b0.jpg" 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/0d4094d3-6b53-47bd-8d88-67f0d26de44b.jpg" 
               alt="Алмазное бурение в бетоне"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
 
@@ -171,9 +171,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           
           <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
             <img 
-              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/bb5c6e38-482f-42a4-bcaa-8562318172b0.jpg" 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/fdf240fb-6609-4dd1-9938-b20bf7a30eff.jpg" 
               alt="Подрядные строительные работы"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
 

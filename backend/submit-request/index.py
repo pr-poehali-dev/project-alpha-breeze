@@ -34,6 +34,7 @@ def handler(event: dict, context) -> dict:
         body = json.loads(event.get('body', '{}'))
         name = body.get('name', '')
         phone = body.get('phone', '')
+        service = body.get('service', 'Бурение скважин под воду')
 
         if not name or not phone:
             return {
@@ -52,7 +53,7 @@ def handler(event: dict, context) -> dict:
         print(f'Telegram токен установлен: {bool(telegram_token)}, Chat ID: {chat_id}')
 
         if telegram_token and chat_id:
-            message = f"🔔 Новая заявка на бурение скважин!\n\n👤 Имя: {name}\n📞 Телефон: {phone}"
+            message = f"🔔 Новая заявка: {service}\n\n👤 Имя: {name}\n📞 Телефон: {phone}"
             
             url = f"https://api.telegram.org/bot{telegram_token}/sendMessage"
             data = urllib.parse.urlencode({
