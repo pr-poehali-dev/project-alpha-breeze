@@ -22,6 +22,11 @@ export function WaitlistSignup() {
           <ServiceMenu activeService={activeService} onServiceChange={setActiveService} />
           <ServiceContent activeService={activeService} onSuccess={handleSuccess} />
           <Reviews />
+          <footer className="mt-8 pt-6 border-t border-white/10 text-center">
+            <p className="text-gray-200 text-sm font-medium">
+              © 2026 Профессиональное бурение. Все права защищены
+            </p>
+          </footer>
         </div>
       </div>
     </div>

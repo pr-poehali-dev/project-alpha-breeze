@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import Icon from '@/components/ui/icon'
+import { Avatar } from './Avatar'
 
 interface Review {
   id: number
@@ -120,15 +121,46 @@ const reviews: Review[] = [
 
 export function Reviews() {
   const [showAll, setShowAll] = useState(false)
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set())
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const displayedReviews = showAll ? reviews : reviews.slice(0, 4)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute('data-index'))
+            setVisibleCards(prev => new Set([...prev, index]))
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [displayedReviews.length])
 
   return (
     <div className="w-full space-y-6 mb-8">
+      <div className="flex items-center justify-center gap-3 mb-8">
+        <div className="flex -space-x-2">
+          <Avatar initials="АК" index={0} />
+          <Avatar initials="МП" index={1} />
+          <Avatar initials="ЕС" index={2} />
+        </div>
+        <p className="text-white font-semibold text-lg">500+ клиентов доверяют нам</p>
+      </div>
+
       <div className="text-center mb-6">
         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">
           Отзывы клиентов
         </h3>
-        <div className="flex items-center justify-center gap-4 text-gray-400 text-sm">
+        <div className="flex items-center justify-center gap-4 text-gray-200 text-sm font-medium">
           <a
             href="https://yandex.ru/maps/org/1234567890"
             target="_blank"
@@ -152,15 +184,22 @@ export function Reviews() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {displayedReviews.map((review) => (
+        {displayedReviews.map((review, index) => (
           <div
             key={review.id}
-            className="p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
+            ref={(el) => (cardRefs.current[index] = el)}
+            data-index={index}
+            className={`p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-500 ${
+              visibleCards.has(index)
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionDelay: `${(index % 3) * 100}ms` }}
           >
             <div className="flex items-start justify-between mb-3">
               <div>
                 <h4 className="text-white font-semibold">{review.name}</h4>
-                <p className="text-gray-400 text-xs">{review.date}</p>
+                <p className="text-gray-300 text-xs font-medium">{review.date}</p>
               </div>
               <div className="flex items-center gap-1">
                 {[...Array(review.rating)].map((_, i) => (
@@ -173,10 +212,10 @@ export function Reviews() {
                 ))}
               </div>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed mb-3">
+            <p className="text-gray-100 text-sm leading-relaxed mb-3 font-medium">
               {review.text}
             </p>
-            <div className="flex items-center gap-2 text-xs text-gray-500">
+            <div className="flex items-center gap-2 text-xs text-gray-400">
               <Icon name={review.source === 'yandex' ? 'Star' : 'MapPin'} size={12} />
               <span>{review.source === 'yandex' ? 'Яндекс.Карты' : '2ГИС'}</span>
             </div>
