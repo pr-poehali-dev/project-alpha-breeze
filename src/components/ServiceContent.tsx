@@ -169,12 +169,21 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             КОМПЛЕКСНОЕ ВЫПОЛНЕНИЕ РАБОТ ПОД КЛЮЧ
           </p>
           
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
-            <img 
-              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/fdf240fb-6609-4dd1-9938-b20bf7a30eff.jpg" 
-              alt="Подрядные строительные работы"
-              className="w-full h-full object-contain"
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 flex items-center justify-center">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/fdf240fb-6609-4dd1-9938-b20bf7a30eff.jpg" 
+                alt="Подрядные строительные работы"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 flex items-center justify-center">
+              <img 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/8ee5d6b9-7152-4686-900a-bcaaadfaee3a.JPG" 
+                alt="Строительный контроль и надзор"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
 
           <div className="space-y-3 mb-6">

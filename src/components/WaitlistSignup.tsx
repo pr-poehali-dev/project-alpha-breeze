@@ -4,6 +4,7 @@ import { CompanyStats } from "./CompanyStats"
 import { ServiceMenu, type ServiceTab } from "./ServiceMenu"
 import { ServiceContent } from "./ServiceContent"
 import { TestimonialsSection } from "./TestimonialsSection"
+import { Reviews } from "./Reviews"
 
 export function WaitlistSignup() {
   const [waitlistCount, setWaitlistCount] = useState(47)
@@ -21,6 +22,7 @@ export function WaitlistSignup() {
           <CompanyStats />
           <ServiceMenu activeService={activeService} onServiceChange={setActiveService} />
           <ServiceContent activeService={activeService} onSuccess={handleSuccess} />
+          <Reviews />
         </div>
       </div>
       <TestimonialsSection />
