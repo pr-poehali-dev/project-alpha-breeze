@@ -189,7 +189,7 @@ export function Reviews() {
             key={review.id}
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
-            className={`p-5 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 shadow-md transition-all duration-500 ${
+            className={`p-5 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 shadow-md transition-all duration-500 hover:scale-105 ${
               visibleCards.has(index)
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
