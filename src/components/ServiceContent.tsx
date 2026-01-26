@@ -19,11 +19,11 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
           
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6 animate-slide-in">
             <img 
-              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/087eb7cf-bada-46a4-8f65-643d67945860.jpg" 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/5beb77fc-b6d5-4e02-89c7-d36a71ba1cd5.jpg" 
               alt="Бурение скважины на участке"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
 
@@ -69,7 +69,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ТОЧНОЕ СВЕРЛЕНИЕ БЕЗ ПЫЛИ И ВИБРАЦИИ
           </p>
           
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6">
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6 animate-slide-in">
             <img 
               src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/734a790e-6248-4c34-a16d-86aeab895172.jpg" 
               alt="Алмазное бурение отверстий"
@@ -119,7 +119,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЗЕМЛЯНЫЕ РАБОТЫ ЛЮБОЙ СЛОЖНОСТИ
           </p>
           
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6">
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6 animate-slide-in">
             <img 
               src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/251fa8dc-fbda-478a-9fa2-9757006db152.jpg" 
               alt="Работа мини-экскаватора Kubota"
@@ -169,21 +169,12 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             КОМПЛЕКСНОЕ ВЫПОЛНЕНИЕ РАБОТ ПОД КЛЮЧ
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 flex items-center justify-center">
-              <img 
-                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/fdf240fb-6609-4dd1-9938-b20bf7a30eff.jpg" 
-                alt="Подрядные строительные работы"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 flex items-center justify-center">
-              <img 
-                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/8ee5d6b9-7152-4686-900a-bcaaadfaee3a.JPG" 
-                alt="Строительный контроль и надзор"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6 animate-slide-in">
+            <img 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/fdf240fb-6609-4dd1-9938-b20bf7a30eff.jpg" 
+              alt="Подрядные строительные работы"
+              className="w-full h-auto object-contain"
+            />
           </div>
 
           <div className="space-y-3 mb-6">
