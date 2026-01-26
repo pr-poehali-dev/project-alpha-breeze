@@ -24,7 +24,7 @@ export function WaitlistSignup() {
           <Reviews />
           <footer className="mt-8 pt-6 border-t border-white/10 text-center">
             <p className="text-gray-200 text-sm font-medium">
-              © 2026 Профессиональное бурение. Все права защищены
+              © 2026 Профессиональное бурение скважин на воду. Все права защищены
             </p>
           </footer>
         </div>
