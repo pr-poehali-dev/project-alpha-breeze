@@ -20,18 +20,18 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm animate-slide-in">
+            <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in h-80">
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/5beb77fc-b6d5-4e02-89c7-d36a71ba1cd5.jpg" 
                 alt="Бурение скважины на участке"
-                className="w-full h-auto object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm animate-slide-in">
+            <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in h-80">
               <img 
-                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/7b81eaf0-42e0-43d4-ad2d-4fbf9691e8e7.jpg" 
+                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/95edde49-4b35-41c8-bca1-d28433321733.JPG" 
                 alt="Буровая установка на участке"
-                className="w-full h-auto object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -44,21 +44,21 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
                 <p className="text-base text-gray-700 font-medium">Геологоразведка с гарантией обнаружения воды на вашем участке</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Drill" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Бурение скважины</h3>
                 <p className="text-base text-gray-700 font-medium">Малогабаритная техника для бурения на глубину до 200 метров</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Zap" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Установка насоса</h3>
                 <p className="text-base text-gray-700 font-medium">Подбор и монтаж насосного оборудования под ваши потребности</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Droplet" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Обустройство скважины</h3>
@@ -87,28 +87,28 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </div>
 
           <div className="space-y-3 mb-6">
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Home" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Отверстия под коммуникации</h3>
                 <p className="text-base text-gray-700 font-medium">Сверление в бетоне и кирпиче для труб, вентиляции, кабелей</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="DoorOpen" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Дверные и оконные проемы</h3>
                 <p className="text-base text-gray-700 font-medium">Создание проемов в несущих стенах без ущерба конструкции</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Sparkles" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Работа любой сложности</h3>
                 <p className="text-base text-gray-700 font-medium">Диаметр от 20 до 500 мм, глубина до 3 метров</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Shield" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Безопасность и чистота</h3>
@@ -128,7 +128,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЗЕМЛЯНЫЕ РАБОТЫ ЛЮБОЙ СЛОЖНОСТИ
           </p>
           
-          <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm mb-6 animate-slide-in">
+          <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in">
             <img 
               src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/251fa8dc-fbda-478a-9fa2-9757006db152.jpg" 
               alt="Работа мини-экскаватора Kubota"
@@ -137,28 +137,28 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </div>
 
           <div className="space-y-3 mb-6">
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Move" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Рытье траншей и котлованов</h3>
                 <p className="text-base text-gray-700 font-medium">Под фундамент, коммуникации, водопровод и канализацию</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Mountain" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Планировка участка</h3>
                 <p className="text-base text-gray-700 font-medium">Выравнивание территории, уборка грунта и строительного мусора</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Trees" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Ландшафтные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Создание водоемов, террасирование склонов, подготовка под газон</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Construction" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Компактная техника Kubota</h3>
@@ -178,7 +178,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             КОМПЛЕКСНОЕ ВЫПОЛНЕНИЕ РАБОТ ПОД КЛЮЧ
           </p>
           
-          <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm mb-6 animate-slide-in">
+          <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in">
             <img 
               src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/fdf240fb-6609-4dd1-9938-b20bf7a30eff.jpg" 
               alt="Подрядные строительные работы"
@@ -187,28 +187,28 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </div>
 
           <div className="space-y-3 mb-6">
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="HardHat" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Строительные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Фундаменты, кладка, монтаж конструкций любой сложности</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="Wrench" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Монтажные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Установка систем водоснабжения, канализации, отопления</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="PaintBucket" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Отделочные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Штукатурка, покраска, облицовка, напольные покрытия</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md">
               <Icon name="ClipboardCheck" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Работа под ключ</h3>

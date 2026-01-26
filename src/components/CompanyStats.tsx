@@ -13,17 +13,17 @@ export function CompanyStats() {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mb-6">
-        <div className="p-4 bg-white/10 rounded-xl border border-white/20 text-center">
+        <div className="p-4 bg-white/10 rounded-xl border border-white/20 shadow-md text-center">
           <div className="text-3xl font-bold text-white mb-1">15+</div>
           <div className="text-sm text-gray-100 font-medium">лет опыта</div>
         </div>
-        <div className="p-4 bg-white/10 rounded-xl border border-white/20 text-center">
+        <div className="p-4 bg-white/10 rounded-xl border border-white/20 shadow-md text-center">
           <div className="text-3xl font-bold text-white mb-1">500+</div>
           <div className="text-sm text-gray-100 font-medium">выполненных работ</div>
         </div>
       </div>
 
-      <div className="space-y-2 mb-6 p-4 bg-white/10 rounded-xl border border-white/20">
+      <div className="space-y-2 mb-6 p-4 bg-white/10 rounded-xl border border-white/20 shadow-md">
         <div className="flex items-center gap-2">
           <Icon name="CheckCircle" fallback="Circle" size={18} className="text-green-400 flex-shrink-0" />
           <p className="text-sm text-gray-100 font-medium">Сертифицированные специалисты</p>
