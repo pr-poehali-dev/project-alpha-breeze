@@ -69,21 +69,12 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ТОЧНОЕ СВЕРЛЕНИЕ БЕЗ ПЫЛИ И ВИБРАЦИИ
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 flex items-center justify-center">
-              <img 
-                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/0d4094d3-6b53-47bd-8d88-67f0d26de44b.jpg" 
-                alt="Алмазное бурение в бетоне"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 flex items-center justify-center">
-              <img 
-                src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/734a790e-6248-4c34-a16d-86aeab895172.jpg" 
-                alt="Алмазное бурение отверстий"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6">
+            <img 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/734a790e-6248-4c34-a16d-86aeab895172.jpg" 
+              alt="Алмазное бурение отверстий"
+              className="w-full h-auto object-contain"
+            />
           </div>
 
           <div className="space-y-3 mb-6">
@@ -128,11 +119,11 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЗЕМЛЯНЫЕ РАБОТЫ ЛЮБОЙ СЛОЖНОСТИ
           </p>
           
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-64 sm:h-80 flex items-center justify-center mb-6">
+          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6">
             <img 
-              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/2943819d-ef84-4e7d-ba22-6f90748c12b7.jpg" 
+              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/251fa8dc-fbda-478a-9fa2-9757006db152.jpg" 
               alt="Работа мини-экскаватора Kubota"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
 

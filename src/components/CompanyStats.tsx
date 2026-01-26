@@ -6,7 +6,7 @@ export function CompanyStats() {
     <>
       <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6">
         <img 
-          src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/39c957eb-8a9e-4e9d-8de3-abb4153c7450.jpg" 
+          src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/5acb3e38-a72c-4a27-b74e-a8110edee461.jpg" 
           alt="Наш прораб приветствует вас"
           className="w-full h-auto object-contain"
         />
