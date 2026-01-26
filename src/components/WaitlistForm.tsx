@@ -76,7 +76,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
         Бесплатный расчёт стоимости
       </h3>
       <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="overflow-hidden rounded-xl bg-white/5 p-1 ring-1 ring-white/20 focus-within:ring-2 focus-within:ring-blue-500">
+        <div className="overflow-hidden rounded-xl bg-white p-1 ring-1 ring-gray-300 focus-within:ring-2 focus-within:ring-blue-600">
           <Input
             id="name"
             name="name"
@@ -85,10 +85,10 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border-0 bg-transparent text-white placeholder:text-gray-400 focus:ring-0 focus:border-transparent focus-visible:border-transparent focus:outline-none active:ring-0 active:outline-none focus-visible:ring-0 focus-visible:outline-none active:border-transparent focus-visible:ring-offset-0"
+            className="w-full border-0 bg-transparent text-gray-900 placeholder:text-gray-500 focus:ring-0 focus:border-transparent focus-visible:border-transparent focus:outline-none active:ring-0 active:outline-none focus-visible:ring-0 focus-visible:outline-none active:border-transparent focus-visible:ring-offset-0"
           />
         </div>
-        <div className="overflow-hidden rounded-xl bg-white/5 p-1 ring-1 ring-white/20 focus-within:ring-2 focus-within:ring-blue-500">
+        <div className="overflow-hidden rounded-xl bg-white p-1 ring-1 ring-gray-300 focus-within:ring-2 focus-within:ring-blue-600">
           <Input
             id="phone"
             name="phone"
@@ -97,7 +97,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full border-0 bg-transparent text-white placeholder:text-gray-400 focus:ring-0 focus:border-transparent focus-visible:border-transparent focus:outline-none active:ring-0 active:outline-none focus-visible:ring-0 focus-visible:outline-none active:border-transparent focus-visible:ring-offset-0"
+            className="w-full border-0 bg-transparent text-gray-900 placeholder:text-gray-500 focus:ring-0 focus:border-transparent focus-visible:border-transparent focus:outline-none active:ring-0 active:outline-none focus-visible:ring-0 focus-visible:outline-none active:border-transparent focus-visible:ring-offset-0"
           />
         </div>
         
