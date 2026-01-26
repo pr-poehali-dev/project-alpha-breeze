@@ -15,9 +15,16 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Бурение скважин на воду
           </h2>
-          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-6 tracking-wide text-center">
+          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
+
+          <div className="flex justify-center mb-6">
+            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+              <Icon name="Phone" size={20} />
+              Позвонить
+            </a>
+          </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in transition-transform duration-300 hover:scale-105">
@@ -37,7 +44,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </div>
 
           <div className="space-y-3 mb-6">
-            <div className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
+            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
               <Icon name="Search" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Поиск водоносного слоя</h3>
@@ -74,9 +81,16 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Алмазное бурение
           </h2>
-          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-6 tracking-wide text-center">
+          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             ТОЧНОЕ СВЕРЛЕНИЕ БЕЗ ПЫЛИ И ВИБРАЦИИ
           </p>
+
+          <div className="flex justify-center mb-6">
+            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+              <Icon name="Phone" size={20} />
+              Позвонить
+            </a>
+          </div>
           
           <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6 animate-slide-in transition-transform duration-300 hover:scale-105">
             <img 
@@ -124,9 +138,16 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Услуги мини-экскаватора
           </h2>
-          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-6 tracking-wide text-center">
+          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             ЗЕМЛЯНЫЕ РАБОТЫ ЛЮБОЙ СЛОЖНОСТИ
           </p>
+
+          <div className="flex justify-center mb-6">
+            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+              <Icon name="Phone" size={20} />
+              Позвонить
+            </a>
+          </div>
           
           <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in transition-transform duration-300 hover:scale-105">
             <img 
@@ -174,9 +195,16 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Подрядные работы
           </h2>
-          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-6 tracking-wide text-center">
+          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             КОМПЛЕКСНОЕ ВЫПОЛНЕНИЕ РАБОТ ПОД КЛЮЧ
           </p>
+
+          <div className="flex justify-center mb-6">
+            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+              <Icon name="Phone" size={20} />
+              Позвонить
+            </a>
+          </div>
           
           <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in">
             <img 
