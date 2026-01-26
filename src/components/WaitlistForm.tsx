@@ -72,7 +72,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
 
   return (
     <div className="w-full space-y-4 mb-8">
-      <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 uppercase text-center">
+      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 uppercase text-center">
         Бесплатный расчёт стоимости
       </h3>
       <form onSubmit={handleSubmit} className="space-y-3">
@@ -109,13 +109,13 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             className="mt-1 w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
             required
           />
-          <span className="text-sm text-gray-300 leading-relaxed">
+          <span className="text-sm text-gray-700 leading-relaxed">
             Я согласен на обработку персональных данных в соответствии с{' '}
             <a 
               href="http://www.consultant.ru/document/cons_doc_LAW_61801/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 underline"
+              className="text-blue-600 hover:text-blue-700 underline"
             >
               ФЗ-152
             </a>
@@ -125,7 +125,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
         <Button
           type="submit"
           disabled={isPending || !agreed}
-          className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-3 rounded-xl transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isPending ? (
             <Loader2 className="h-5 w-5 animate-spin" />
@@ -136,24 +136,24 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
       </form>
       
       <div className="text-center">
-        <p className="text-gray-400 text-sm mb-3">или свяжитесь с нами</p>
+        <p className="text-gray-600 text-sm mb-3">или свяжитесь с нами</p>
         <div className="flex gap-3 justify-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300">
+              <button className="inline-flex items-center gap-2 px-5 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-xl transition-all duration-300">
                 <Icon name="Phone" size={20} />
                 Позвонить
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-gray-900 border-gray-700">
+            <DropdownMenuContent className="bg-white border-gray-200">
               <DropdownMenuItem asChild>
-                <a href="tel:+79494816485" className="flex items-center gap-2 cursor-pointer text-white hover:text-blue-300">
+                <a href="tel:+79494816485" className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
                   <Icon name="Phone" size={16} />
                   +7 (949) 481-64-85
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <a href="tel:+79180445186" className="flex items-center gap-2 cursor-pointer text-white hover:text-blue-300">
+                <a href="tel:+79180445186" className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
                   <Icon name="Phone" size={16} />
                   +7 (918) 044-51-86
                 </a>

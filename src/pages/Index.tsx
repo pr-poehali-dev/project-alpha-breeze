@@ -35,17 +35,8 @@ export default function Index() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/89709df5-b087-4873-877e-fd22a613d295.jpg" />
       </Helmet>
-      <main
-        className="min-h-screen flex items-center justify-center"
-        style={{
-          background: "radial-gradient(circle at center, #3B82F6, #1E3A8A)",
-        }}
-      >
-        <style>{backgroundStyle}</style>
-        <div className="bg-pattern"></div>
-        <div className="content w-full">
-          <WaitlistSignup />
-        </div>
+      <main className="min-h-screen bg-white">
+        <WaitlistSignup />
         <Toaster />
       </main>
     </>

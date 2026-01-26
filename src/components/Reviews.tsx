@@ -153,19 +153,19 @@ export function Reviews() {
           <Avatar initials="МП" index={1} />
           <Avatar initials="ЕС" index={2} />
         </div>
-        <p className="text-white font-semibold text-lg">500+ клиентов доверяют нам</p>
+        <p className="text-gray-900 font-semibold text-lg">500+ клиентов доверяют нам</p>
       </div>
 
       <div className="text-center mb-6">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 uppercase">
           Отзывы клиентов
         </h3>
-        <div className="flex items-center justify-center gap-4 text-gray-200 text-sm font-medium">
+        <div className="flex items-center justify-center gap-4 text-gray-700 text-sm font-medium">
           <a
             href="https://yandex.ru/maps/org/1234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+            className="flex items-center gap-2 hover:text-blue-600 transition-colors"
           >
             <Icon name="Star" size={16} className="fill-yellow-400 text-yellow-400" />
             <span>Яндекс.Карты</span>
@@ -175,7 +175,7 @@ export function Reviews() {
             href="https://2gis.ru/firm/1234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+            className="flex items-center gap-2 hover:text-blue-600 transition-colors"
           >
             <Icon name="MapPin" size={16} />
             <span>2ГИС</span>
@@ -189,7 +189,7 @@ export function Reviews() {
             key={review.id}
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
-            className={`p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-500 ${
+            className={`p-5 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 shadow-sm transition-all duration-500 ${
               visibleCards.has(index)
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
@@ -198,8 +198,8 @@ export function Reviews() {
           >
             <div className="flex items-start justify-between mb-3">
               <div>
-                <h4 className="text-white font-semibold">{review.name}</h4>
-                <p className="text-gray-300 text-xs font-medium">{review.date}</p>
+                <h4 className="text-gray-900 font-semibold">{review.name}</h4>
+                <p className="text-gray-600 text-xs font-medium">{review.date}</p>
               </div>
               <div className="flex items-center gap-1">
                 {[...Array(review.rating)].map((_, i) => (
@@ -212,10 +212,10 @@ export function Reviews() {
                 ))}
               </div>
             </div>
-            <p className="text-gray-100 text-sm leading-relaxed mb-3 font-medium">
+            <p className="text-gray-700 text-sm leading-relaxed mb-3 font-medium">
               {review.text}
             </p>
-            <div className="flex items-center gap-2 text-xs text-gray-400">
+            <div className="flex items-center gap-2 text-xs text-gray-500">
               <Icon name={review.source === 'yandex' ? 'Star' : 'MapPin'} size={12} />
               <span>{review.source === 'yandex' ? 'Яндекс.Карты' : '2ГИС'}</span>
             </div>
@@ -227,7 +227,7 @@ export function Reviews() {
         <div className="text-center">
           <Button
             onClick={() => setShowAll(true)}
-            className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300"
           >
             Показать все отзывы ({reviews.length})
           </Button>
@@ -238,7 +238,7 @@ export function Reviews() {
         <div className="text-center">
           <Button
             onClick={() => setShowAll(false)}
-            className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300"
+            className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-6 py-3 rounded-xl transition-all duration-300"
           >
             Скрыть
           </Button>
