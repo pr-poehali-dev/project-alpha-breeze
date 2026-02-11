@@ -31,6 +31,17 @@ export function WaitlistSignup() {
       <footer className="bg-gradient-to-br from-blue-600 to-blue-800 mt-auto p-6 sm:p-8">
         <div className="w-full max-w-4xl mx-auto text-center space-y-4">
             <div className="mb-4">
+              <h3 className="text-lg font-semibold text-white mb-2">Контакты</h3>
+              <div className="flex flex-wrap justify-center gap-4 mb-4">
+                <a href="tel:+79494816485" className="text-gray-200 hover:text-white transition-colors font-medium">
+                  +7 (949) 481-64-85
+                </a>
+                <a href="tel:+79494816419" className="text-gray-200 hover:text-white transition-colors font-medium">
+                  +7 (949) 481-64-19
+                </a>
+              </div>
+            </div>
+            <div className="mb-4">
               <h3 className="text-lg font-semibold text-white mb-2">География оказания услуг</h3>
               <p className="text-gray-200 text-sm font-medium">
                 Донецк • Макеевка • Харцызск • Енакиево • Горловка • Ясиноватая
