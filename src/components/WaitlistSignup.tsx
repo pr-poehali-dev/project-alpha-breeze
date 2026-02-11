@@ -39,9 +39,6 @@ export function WaitlistSignup() {
                 <a href="tel:+79494816419" className="text-gray-200 hover:text-white transition-colors font-medium">
                   +7 (949) 481-64-19
                 </a>
-                <a href="tel:+79494816485" className="text-gray-200 hover:text-white transition-colors font-medium">
-                  +7 (949) 481-64-85
-                </a>
               </div>
             </div>
             <div className="mb-4">
