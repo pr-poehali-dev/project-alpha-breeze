@@ -31,7 +31,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/6cbdaaf2-21c4-41e5-8fc1-77f837e30eaf.jpg" 
                 alt="Бурение скважины на участке"
-                className="w-full h-auto object-cover aspect-square"
+                className="w-full h-auto object-cover aspect-square object-top"
               />
             </div>
             <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in transition-transform duration-300 hover:scale-105">
