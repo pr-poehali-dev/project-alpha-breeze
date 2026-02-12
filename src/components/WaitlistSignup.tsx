@@ -15,8 +15,14 @@ export function WaitlistSignup() {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
-      <header className="bg-gradient-to-br from-blue-600 to-blue-800 p-4 sm:p-8">
-        <div className="w-full max-w-4xl mx-auto">
+      <header className="relative bg-gradient-to-br from-blue-600 to-blue-800 p-4 sm:p-8 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage: "url('https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/files/5acb3e38-a72c-4a27-b74e-a8110edee461.jpg')"
+          }}
+        />
+        <div className="w-full max-w-4xl mx-auto relative z-10">
           <ContactHeader />
           <CompanyStats />
         </div>
