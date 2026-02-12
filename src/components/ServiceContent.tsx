@@ -26,19 +26,19 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             </a>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-3 mb-6">
             <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in transition-transform duration-300 hover:scale-105">
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/6cbdaaf2-21c4-41e5-8fc1-77f837e30eaf.jpg" 
                 alt="Бурение скважины на участке"
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-cover aspect-square"
               />
             </div>
             <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in transition-transform duration-300 hover:scale-105">
               <img 
                 src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/95edde49-4b35-41c8-bca1-d28433321733.JPG" 
                 alt="Буровая установка на участке"
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-cover aspect-square"
               />
             </div>
           </div>
