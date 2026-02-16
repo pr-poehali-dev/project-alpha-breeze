@@ -17,11 +17,19 @@ interface WaitlistFormProps {
   serviceType: string;
 }
 
+const serviceLabels: Record<string, string> = {
+  'well-drilling': 'бурению скважин',
+  'diamond-drilling': 'алмазному бурению',
+  'excavator': 'услугам мини-экскаватора',
+  'contracting': 'подрядным работам',
+}
+
 export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [agreed, setAgreed] = useState(false)
   const [isPending, setIsPending] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,14 +52,9 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
 
       if (response.ok && data.success) {
         reachGoal('submit_form', { service: serviceType })
-        toast({
-          title: "Заявка принята!",
-          description: "Мы свяжемся с вами в течение часа",
-          duration: 5000,
-        })
+        reachGoal(`lead_${serviceType.replace(/-/g, '_')}`)
+        setIsSubmitted(true)
         onSuccess(1)
-        setName('')
-        setPhone('')
       } else {
         toast({
           title: "Ошибка",
@@ -70,6 +73,52 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
     } finally {
       setIsPending(false)
     }
+  }
+
+  const handleNewRequest = () => {
+    setIsSubmitted(false)
+    setName('')
+    setPhone('')
+    setAgreed(false)
+  }
+
+  if (isSubmitted) {
+    return (
+      <div className="w-full mb-8 animate-fade-in">
+        <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl border border-green-200 p-6 sm:p-8 text-center shadow-lg">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon name="CheckCircle" size={36} className="text-green-600" />
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+            Спасибо за заявку!
+          </h3>
+          <p className="text-lg text-gray-700 font-medium mb-1">
+            Мы перезвоним вам в течение <span className="text-blue-600 font-bold">30 минут</span>
+          </p>
+          <p className="text-base text-gray-600 mb-6">
+            Наш специалист по {serviceLabels[serviceType] || 'услуге'} свяжется с вами для уточнения деталей
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:+79494816485"
+              onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'thank_you' })}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              <Icon name="Phone" size={20} />
+              Позвонить сейчас
+            </a>
+            <button
+              onClick={handleNewRequest}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl transition-all duration-300 border border-gray-300"
+            >
+              <Icon name="Plus" size={20} />
+              Новая заявка
+            </button>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
