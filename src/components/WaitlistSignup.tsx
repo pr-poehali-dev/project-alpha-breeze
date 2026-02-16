@@ -4,6 +4,7 @@ import { CompanyStats } from "./CompanyStats"
 import { ServiceMenu, type ServiceTab } from "./ServiceMenu"
 import { ServiceContent } from "./ServiceContent"
 import { Reviews } from "./Reviews"
+import reachGoal from "@/lib/metrika"
 
 export function WaitlistSignup() {
   const [waitlistCount, setWaitlistCount] = useState(47)
@@ -40,10 +41,10 @@ export function WaitlistSignup() {
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-white mb-2">Контакты</h3>
               <div className="flex flex-wrap justify-center gap-4 mb-4">
-                <a href="tel:+79494816485" className="text-gray-200 hover:text-white transition-colors font-medium">
+                <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'footer' })} className="text-gray-200 hover:text-white transition-colors font-medium">
                   +7 (949) 481-64-85
                 </a>
-                <a href="tel:+79494816419" className="text-gray-200 hover:text-white transition-colors font-medium">
+                <a href="tel:+79494816419" onClick={() => reachGoal('click_phone', { phone: '79494816419', location: 'footer' })} className="text-gray-200 hover:text-white transition-colors font-medium">
                   +7 (949) 481-64-19
                 </a>
               </div>

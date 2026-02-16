@@ -1,6 +1,7 @@
 import Icon from "@/components/ui/icon"
 import { WaitlistForm } from "./WaitlistForm"
 import type { ServiceTab } from "./ServiceMenu"
+import reachGoal from "@/lib/metrika"
 
 interface ServiceContentProps {
   activeService: ServiceTab
@@ -20,7 +21,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
               <Icon name="Phone" size={20} />
               Позвонить
             </a>
@@ -86,7 +87,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
               <Icon name="Phone" size={20} />
               Позвонить
             </a>
@@ -143,7 +144,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
               <Icon name="Phone" size={20} />
               Позвонить
             </a>
@@ -200,7 +201,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
               <Icon name="Phone" size={20} />
               Позвонить
             </a>

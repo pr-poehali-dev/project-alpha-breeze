@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input'
 import Icon from '@/components/ui/icon'
 import { Loader2 } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
+import reachGoal from "@/lib/metrika"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,6 +43,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
       const data = await response.json()
 
       if (response.ok && data.success) {
+        reachGoal('submit_form', { service: serviceType })
         toast({
           title: "Заявка принята!",
           description: "Мы свяжемся с вами в течение часа",
@@ -147,13 +149,13 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white border-gray-200">
               <DropdownMenuItem asChild>
-                <a href="tel:+79494816485" className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+                <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'form_dropdown' })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
                   <Icon name="Phone" size={16} />
                   +7 (949) 481-64-85
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <a href="tel:+79180445186" className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+                <a href="tel:+79180445186" onClick={() => reachGoal('click_phone', { phone: '79180445186', location: 'form_dropdown' })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
                   <Icon name="Phone" size={16} />
                   +7 (918) 044-51-86
                 </a>
@@ -164,6 +166,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             href="https://t.me/+79180445186"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => reachGoal('click_telegram')}
             className="inline-flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300"
           >
             <Icon name="Send" size={20} />

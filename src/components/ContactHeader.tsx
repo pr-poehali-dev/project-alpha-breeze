@@ -1,14 +1,15 @@
 import Icon from "@/components/ui/icon"
+import reachGoal from "@/lib/metrika"
 
 export function ContactHeader() {
   return (
     <>
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-6 text-sm text-white font-medium">
-        <a href="tel:+79494816485" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
+        <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'header' })} className="flex items-center gap-2 hover:text-blue-200 transition-colors">
           <Icon name="Phone" fallback="Circle" size={16} className="text-blue-200" />
           <span>+7 (949) 481-64-85</span>
         </a>
-        <a href="tel:+79494816419" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
+        <a href="tel:+79494816419" onClick={() => reachGoal('click_phone', { phone: '79494816419', location: 'header' })} className="flex items-center gap-2 hover:text-blue-200 transition-colors">
           <Icon name="Phone" fallback="Circle" size={16} className="text-blue-200" />
           <span>+7 (949) 481-64-19</span>
         </a>
