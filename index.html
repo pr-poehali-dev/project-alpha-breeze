@@ -33,6 +33,9 @@
     <meta name="yandex" content="noyaca"/>
     <meta name="robots" content="index, follow"/>
     <link rel="canonical" href="https://skvazhiny-dnr.ru/"/>
+    <style>
+      [class*="poehali" i],[id*="poehali" i],[class*="pp-badge"],[id*="pp-badge"],[class*="pp-watermark"],[id*="pp-watermark"],[data-pp],[class*="powered-by"],[id*="powered-by"],[class*="pp-widget"],[id*="pp-widget"]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;height:0!important;width:0!important;overflow:hidden!important;position:absolute!important;clip:rect(0,0,0,0)!important;z-index:-9999!important}
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -236,12 +239,14 @@
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106850277', 'ym');
     ym(106850277, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     </script>
+    <!--noindex-->
     <script src="https://cdn.poehali.dev/intertnal/js/telemetry-min.js"></script>
       <meta name="pp-name" value="project-alpha-breeze" data-noindex="true">
       <script src="https://cdn.poehali.dev/intertnal/js/pp-min-2.js"></script>
       <script src="https://cdn.poehali.dev/intertnal/js/route-min.js"></script>
       <script src="https://cdn.poehali.dev/intertnal/js/inspector-min.js"></script>
       <meta name="pp-name" value="project-alpha-breeze">
+    <!--/noindex-->
   </head>
 
 <body>
@@ -261,9 +266,9 @@
     <p>Работаем без выходных. Гарантия на все виды работ.</p>
   </div>
 </noscript>
-<style>
-  [class*="poehali" i], [id*="poehali" i], [class*="pp-badge"] , [id*="pp-badge"], [class*="pp-watermark"], [id*="pp-watermark"], [data-pp], [class*="powered-by"] { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; width: 0 !important; overflow: hidden !important; position: absolute !important; }
-</style>
+<!--noindex--><style>
+  [class*="poehali" i],[id*="poehali" i],[class*="pp-badge"],[id*="pp-badge"],[class*="pp-watermark"],[id*="pp-watermark"],[data-pp],[class*="powered-by"],[id*="powered-by"],[class*="pp-widget"],[id*="pp-widget"]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;height:0!important;width:0!important;overflow:hidden!important;position:absolute!important;clip:rect(0,0,0,0)!important;z-index:-9999!important}
+</style><!--/noindex-->
 <div id="root">
   <div style="max-width:960px;margin:0 auto;padding:40px 20px;font-family:Inter,sans-serif;color:#1a1a1a;">
     <header>
@@ -299,12 +304,16 @@
     </footer>
   </div>
 </div>
-<script>
+<!--noindex--><script>
 (function(){
-  var o=new MutationObserver(function(m){m.forEach(function(r){r.addedNodes.forEach(function(n){if(n.nodeType===1){var t=n.textContent||'';var c=n.className||'';var i=n.id||'';if(/poehali|поехали/i.test(t+c+i)){n.remove()}}})})});
+  function k(n){if(!n||n.id==='root')return;var t=(n.textContent||'').toLowerCase();var c=(n.className||'').toLowerCase();var i=(n.id||'').toLowerCase();var s=c+' '+i+' '+t;if(/poehali|поехали|powered.by|pp-badge|pp-watermark|pp-widget/.test(s)){n.remove();return true}return false}
+  function scan(){document.querySelectorAll('[class*="poehali"],[id*="poehali"],[class*="pp-badge"],[class*="pp-watermark"],[class*="powered-by"],[data-pp]').forEach(function(el){if(el.id!=='root')el.remove()})}
+  scan();
+  var o=new MutationObserver(function(m){m.forEach(function(r){r.addedNodes.forEach(function(n){if(n.nodeType===1){k(n);scan()}})})});
   o.observe(document.body,{childList:true,subtree:true});
+  setInterval(scan,1000);
 })();
-</script>
+</script><!--/noindex-->
 <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
