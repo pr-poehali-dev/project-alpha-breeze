@@ -10,5 +10,14 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexDirect
+Allow: /
+
 User-agent: *
 Allow: /
+
+Host: https://skvazhiny-dnr.ru
+Sitemap: https://skvazhiny-dnr.ru/sitemap.xml
