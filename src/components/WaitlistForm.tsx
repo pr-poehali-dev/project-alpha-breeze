@@ -100,14 +100,34 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:+79494816485"
-              onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'thank_you' })}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
-            >
-              <Icon name="Phone" size={20} />
-              Позвонить сейчас
-            </a>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+                  <Icon name="Phone" size={20} />
+                  Позвонить сейчас
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white border-gray-200">
+                <DropdownMenuItem asChild>
+                  <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'thank_you' })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+                    <Icon name="Phone" size={16} />
+                    +7 (949) 481-64-85
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="tel:+79494816419" onClick={() => reachGoal('click_phone', { phone: '79494816419', location: 'thank_you' })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+                    <Icon name="Phone" size={16} />
+                    +7 (949) 481-64-19
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="tel:+79180445186" onClick={() => reachGoal('click_phone', { phone: '79180445186', location: 'thank_you' })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+                    <Icon name="Phone" size={16} />
+                    +7 (918) 044-51-86
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button
               onClick={handleNewRequest}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl transition-all duration-300 border border-gray-300"
@@ -201,6 +221,12 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
                 <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'form_dropdown' })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
                   <Icon name="Phone" size={16} />
                   +7 (949) 481-64-85
+                </a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="tel:+79494816419" onClick={() => reachGoal('click_phone', { phone: '79494816419', location: 'form_dropdown' })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+                  <Icon name="Phone" size={16} />
+                  +7 (949) 481-64-19
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>

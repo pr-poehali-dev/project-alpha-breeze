@@ -13,6 +13,10 @@ export function ContactHeader() {
           <Icon name="Phone" fallback="Circle" size={16} className="text-blue-200" />
           <span>+7 (949) 481-64-19</span>
         </a>
+        <a href="tel:+79180445186" onClick={() => reachGoal('click_phone', { phone: '79180445186', location: 'header' })} className="flex items-center gap-2 hover:text-blue-200 transition-colors">
+          <Icon name="Phone" fallback="Circle" size={16} className="text-blue-200" />
+          <span>+7 (918) 044-51-86</span>
+        </a>
         <div className="flex items-center gap-2">
           <Icon name="Clock" fallback="Circle" size={16} className="text-blue-200" />
           <span>ПН-ВС 08:00-20:00</span>

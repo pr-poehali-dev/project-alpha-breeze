@@ -2,6 +2,40 @@ import Icon from "@/components/ui/icon"
 import { WaitlistForm } from "./WaitlistForm"
 import type { ServiceTab } from "./ServiceMenu"
 import reachGoal from "@/lib/metrika"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+
+function CallDropdown({ location }: { location: string }) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+          <Icon name="Phone" size={20} />
+          Позвонить
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="bg-white border-gray-200">
+        <DropdownMenuItem asChild>
+          <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+            <Icon name="Phone" size={16} />
+            +7 (949) 481-64-85
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <a href="tel:+79494816419" onClick={() => reachGoal('click_phone', { phone: '79494816419', location })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+            <Icon name="Phone" size={16} />
+            +7 (949) 481-64-19
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <a href="tel:+79180445186" onClick={() => reachGoal('click_phone', { phone: '79180445186', location })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
+            <Icon name="Phone" size={16} />
+            +7 (918) 044-51-86
+          </a>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
 
 interface ServiceContentProps {
   activeService: ServiceTab
@@ -21,10 +55,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-              <Icon name="Phone" size={20} />
-              Позвонить
-            </a>
+            <CallDropdown location="service_card_well" />
           </div>
           
           <div className="grid grid-cols-2 gap-3 mb-6">
@@ -87,10 +118,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-              <Icon name="Phone" size={20} />
-              Позвонить
-            </a>
+            <CallDropdown location="service_card_diamond" />
           </div>
           
           <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6 animate-slide-in transition-transform duration-300 hover:scale-105">
@@ -144,10 +172,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-              <Icon name="Phone" size={20} />
-              Позвонить
-            </a>
+            <CallDropdown location="service_card_excavator" />
           </div>
           
           <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in transition-transform duration-300 hover:scale-105">
@@ -201,10 +226,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </p>
 
           <div className="flex justify-center mb-6">
-            <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'service_card' })} className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-              <Icon name="Phone" size={20} />
-              Позвонить
-            </a>
+            <CallDropdown location="service_card_contracting" />
           </div>
           
           <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in">
