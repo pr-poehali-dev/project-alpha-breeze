@@ -54,7 +54,11 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
 
-          <div className="relative mb-6 mt-4 p-5 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 shadow-lg border-2 border-amber-300">
+          <a
+            href="tel:+79494816485"
+            onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'promo_banner_well' })}
+            className="relative block mb-6 mt-4 p-5 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 shadow-lg border-2 border-amber-300 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+          >
             <div className="absolute top-2 right-2 bg-white text-orange-600 text-xs font-extrabold px-3 py-1 rounded-full shadow-md rotate-12 z-10">
               АКЦИЯ
             </div>
@@ -62,16 +66,20 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
               <div className="flex-shrink-0 bg-white/20 backdrop-blur-sm rounded-full p-3">
                 <Icon name="Gift" fallback="Star" size={36} className="text-white" />
               </div>
-              <div className="text-left">
+              <div className="text-left flex-1">
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 drop-shadow">
                   Насос и его установка — В ПОДАРОК!
                 </h3>
-                <p className="text-sm sm:text-base text-white/95 font-medium">
+                <p className="text-sm sm:text-base text-white/95 font-medium mb-3">
                   При заказе бурения скважины — насосное оборудование и его монтаж бесплатно
                 </p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white text-orange-600 font-extrabold rounded-xl shadow-md text-base sm:text-lg">
+                  <Icon name="Phone" size={20} />
+                  +7 (949) 481-64-85
+                </div>
               </div>
             </div>
-          </div>
+          </a>
 
           <div className="flex justify-center mb-6">
             <CallDropdown location="service_card_well" />
