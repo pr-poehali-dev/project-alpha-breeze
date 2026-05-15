@@ -70,13 +70,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 drop-shadow">
                   Насос и его установка — В ПОДАРОК!
                 </h3>
-                <p className="text-sm sm:text-base text-white/95 font-medium mb-3">
+                <p className="text-sm sm:text-base text-white/95 font-medium">
                   При заказе бурения скважины — насосное оборудование и его монтаж бесплатно
                 </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white text-orange-600 font-extrabold rounded-xl shadow-md text-base sm:text-lg">
-                  <Icon name="Phone" size={20} />
-                  +7 (949) 481-64-85
-                </div>
               </div>
             </div>
           </a>
