@@ -54,8 +54,8 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
 
-          <div className="relative mb-6 p-5 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 shadow-lg border-2 border-amber-300 overflow-hidden">
-            <div className="absolute -top-2 -right-2 bg-white text-orange-600 text-xs font-extrabold px-3 py-1 rounded-full shadow-md rotate-12">
+          <div className="relative mb-6 mt-4 p-5 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 shadow-lg border-2 border-amber-300">
+            <div className="absolute top-2 right-2 bg-white text-orange-600 text-xs font-extrabold px-3 py-1 rounded-full shadow-md rotate-12 z-10">
               АКЦИЯ
             </div>
             <div className="flex items-center gap-4">
