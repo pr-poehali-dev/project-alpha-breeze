@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { ContactHeader } from "./ContactHeader"
 import { CompanyStats } from "./CompanyStats"
 import { ServiceMenu, type ServiceTab } from "./ServiceMenu"
@@ -6,9 +7,26 @@ import { ServiceContent } from "./ServiceContent"
 import { Reviews } from "./Reviews"
 import reachGoal from "@/lib/metrika"
 
-export function WaitlistSignup() {
+interface WaitlistSignupProps {
+  initialService?: ServiceTab
+}
+
+const serviceRoutes: Record<ServiceTab, string> = {
+  'well-drilling': '/burenie-skvazhin',
+  'diamond-drilling': '/almaznoe-burenie',
+  'excavator': '/mini-ekskavator',
+  'contracting': '/podryadnye-raboty',
+}
+
+export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSignupProps) {
   const [waitlistCount, setWaitlistCount] = useState(47)
-  const [activeService, setActiveService] = useState<ServiceTab>('well-drilling')
+  const [activeService, setActiveService] = useState<ServiceTab>(initialService)
+  const navigate = useNavigate()
+
+  const handleServiceChange = (service: ServiceTab) => {
+    setActiveService(service)
+    navigate(serviceRoutes[service])
+  }
 
   const handleSuccess = (count: number) => {
     setWaitlistCount(prev => prev + count)
@@ -31,7 +49,7 @@ export function WaitlistSignup() {
       </header>
       <div className="flex-1 bg-white">
         <div className="w-full max-w-4xl mx-auto p-4 sm:p-8">
-          <ServiceMenu activeService={activeService} onServiceChange={setActiveService} />
+          <ServiceMenu activeService={activeService} onServiceChange={handleServiceChange} />
           <ServiceContent activeService={activeService} onSuccess={handleSuccess} />
           <Reviews />
         </div>
