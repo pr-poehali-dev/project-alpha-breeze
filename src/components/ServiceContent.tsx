@@ -54,6 +54,25 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
 
+          <div className="relative mb-6 p-5 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 shadow-lg border-2 border-amber-300 overflow-hidden">
+            <div className="absolute -top-2 -right-2 bg-white text-orange-600 text-xs font-extrabold px-3 py-1 rounded-full shadow-md rotate-12">
+              АКЦИЯ
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="flex-shrink-0 bg-white/20 backdrop-blur-sm rounded-full p-3">
+                <Icon name="Gift" fallback="Star" size={36} className="text-white" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 drop-shadow">
+                  Насос и установка — В ПОДАРОК!
+                </h3>
+                <p className="text-sm sm:text-base text-white/95 font-medium">
+                  При заказе бурения скважины — насосное оборудование и его монтаж бесплатно
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex justify-center mb-6">
             <CallDropdown location="service_card_well" />
           </div>
@@ -90,11 +109,13 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
                 <p className="text-base text-gray-700 font-medium">Малогабаритная техника для бурения на глубину до 200 метров</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Zap" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+            <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border-2 border-orange-300 shadow-md transition-transform duration-300 hover:scale-105">
+              <Icon name="Gift" fallback="Star" size={24} className="text-orange-500 flex-shrink-0 mt-1" />
               <div className="text-left">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Установка насоса</h3>
-                <p className="text-base text-gray-700 font-medium">Подбор и монтаж насосного оборудования под ваши потребности</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  Установка насоса <span className="text-orange-600 font-extrabold">бесплатно</span>
+                </h3>
+                <p className="text-base text-gray-700 font-medium">Подбор и монтаж насосного оборудования — в подарок при заказе бурения</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
