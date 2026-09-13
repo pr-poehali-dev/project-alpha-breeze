@@ -68,7 +68,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
               </div>
               <div className="text-left flex-1">
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 drop-shadow">
-                  Установка насосов — В ПОДАРОК!
+                  Установка насоса — В ПОДАРОК!
                 </h3>
                 <p className="text-sm sm:text-base text-white/95 font-medium">
                   При заказе бурения скважины — монтаж насосного оборудования бесплатно
