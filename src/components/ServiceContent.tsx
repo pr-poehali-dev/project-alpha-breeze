@@ -68,10 +68,10 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
               </div>
               <div className="text-left flex-1">
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 drop-shadow">
-                  Насос и его установка — В ПОДАРОК!
+                  Установка насосов — В ПОДАРОК!
                 </h3>
                 <p className="text-sm sm:text-base text-white/95 font-medium">
-                  При заказе бурения скважины — насосное оборудование и его монтаж бесплатно
+                  При заказе бурения скважины — монтаж насосного оборудования бесплатно
                 </p>
               </div>
             </div>
