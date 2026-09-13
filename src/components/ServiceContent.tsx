@@ -47,9 +47,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
     <div className="flex flex-col justify-center">
       {activeService === 'well-drilling' && (
         <>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
-            Бурение скважин на воду
-          </h2>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
+            Бурение скважин на воду в ДНР
+          </h1>
           <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
@@ -152,9 +152,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
       {activeService === 'diamond-drilling' && (
         <>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Алмазное бурение
-          </h2>
+          </h1>
           <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             ТОЧНОЕ СВЕРЛЕНИЕ БЕЗ ПЫЛИ И ВИБРАЦИИ
           </p>
@@ -229,9 +229,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
       {activeService === 'excavator' && (
         <>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Услуги мини-экскаватора
-          </h2>
+          </h1>
           <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             ЗЕМЛЯНЫЕ РАБОТЫ ЛЮБОЙ СЛОЖНОСТИ
           </p>
@@ -306,9 +306,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
       {activeService === 'contracting' && (
         <>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Подрядные работы
-          </h2>
+          </h1>
           <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
             КОМПЛЕКСНОЕ ВЫПОЛНЕНИЕ РАБОТ ПОД КЛЮЧ
           </p>

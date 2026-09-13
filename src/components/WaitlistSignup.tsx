@@ -5,6 +5,8 @@ import { CompanyStats } from "./CompanyStats"
 import { ServiceMenu, type ServiceTab } from "./ServiceMenu"
 import { ServiceContent } from "./ServiceContent"
 import { Reviews } from "./Reviews"
+import { ServiceFaq } from "./ServiceFaq"
+import { MobileCallBar } from "./MobileCallBar"
 import reachGoal from "@/lib/metrika"
 
 interface WaitlistSignupProps {
@@ -33,7 +35,7 @@ export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSig
   }
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col pb-20 lg:pb-0">
       <header className="relative bg-gradient-to-br from-blue-600 to-blue-800 p-4 sm:p-8 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover opacity-30"
@@ -52,6 +54,7 @@ export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSig
           <ServiceMenu activeService={activeService} onServiceChange={handleServiceChange} />
           <ServiceContent activeService={activeService} onSuccess={handleSuccess} />
           <Reviews />
+          <ServiceFaq activeService={activeService} />
         </div>
       </div>
       <footer className="bg-gradient-to-br from-blue-600 to-blue-800 mt-auto p-6 sm:p-8">
@@ -84,6 +87,7 @@ export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSig
           </p>
         </div>
       </footer>
+      <MobileCallBar />
     </div>
   )
 }
