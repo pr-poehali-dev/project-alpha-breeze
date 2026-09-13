@@ -77,6 +77,23 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             </div>
           </a>
 
+          <div className="mb-6 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-md">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center sm:text-left">
+              <div className="flex-shrink-0 bg-blue-600 rounded-full p-3">
+                <Icon name="Wallet" fallback="Circle" size={32} className="text-white" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-blue-700 uppercase tracking-wide mb-1">Стоимость бурения</p>
+                <p className="text-3xl sm:text-4xl font-extrabold text-blue-900 leading-none">
+                  3 500 ₽ <span className="text-xl sm:text-2xl font-bold text-blue-700">/ метр</span>
+                </p>
+                <p className="text-sm text-gray-700 font-medium mt-2">
+                  Окончательная цена — после бесплатного выезда и осмотра участка
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex justify-center mb-6">
             <CallDropdown location="service_card_well" />
           </div>
