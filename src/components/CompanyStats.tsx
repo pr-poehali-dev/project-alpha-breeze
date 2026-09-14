@@ -17,16 +17,22 @@ export function CompanyStats() {
 
       <div className="space-y-2 mb-6 p-4 bg-white/10 rounded-xl border border-white/20 shadow-md transition-transform duration-300 hover:scale-105">
         <div className="flex items-center gap-2">
-          <Icon name="CheckCircle" fallback="Circle" size={18} className="text-green-400 flex-shrink-0" />
-          <p className="text-sm text-gray-100 font-medium">Сертифицированные специалисты</p>
+          <Icon name="ShieldCheck" fallback="CheckCircle" size={18} className="text-green-400 flex-shrink-0" />
+          <p className="text-sm text-gray-100 font-medium">
+            <span className="font-bold text-white">Гарантия 3 года</span> на скважину, работаем по договору
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <Icon name="Droplets" fallback="CheckCircle" size={18} className="text-green-400 flex-shrink-0" />
+          <p className="text-sm text-gray-100 font-medium">
+            <span className="font-bold text-white">Не нашли воду</span> — не платите за бурение
+          </p>
         </div>
         <div className="flex items-center gap-2">
           <Icon name="CheckCircle" fallback="Circle" size={18} className="text-green-400 flex-shrink-0" />
-          <p className="text-sm text-gray-100 font-medium">Профессиональное оборудование</p>
-        </div>
-        <div className="flex items-center gap-2">
-          <Icon name="CheckCircle" fallback="Circle" size={18} className="text-green-400 flex-shrink-0" />
-          <p className="text-sm text-gray-100 font-medium">Гарантия качества на все работы</p>
+          <p className="text-sm text-gray-100 font-medium">
+            Выезд и расчёт стоимости — <span className="font-bold text-white">бесплатно</span>
+          </p>
         </div>
       </div>
     </>

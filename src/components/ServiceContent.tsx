@@ -1,5 +1,6 @@
 import Icon from "@/components/ui/icon"
 import { WaitlistForm } from "./WaitlistForm"
+import { HowWeWork } from "./HowWeWork"
 import type { ServiceTab } from "./ServiceMenu"
 import reachGoal from "@/lib/metrika"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -380,6 +381,8 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </div>
         </>
       )}
+
+      {activeService === 'well-drilling' && <HowWeWork />}
 
       <WaitlistForm onSuccess={onSuccess} serviceType={
         activeService === 'well-drilling' ? 'Бурение скважин под воду' :
