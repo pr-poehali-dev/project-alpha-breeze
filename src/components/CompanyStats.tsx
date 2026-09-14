@@ -19,7 +19,7 @@ export function CompanyStats() {
         <div className="flex items-center gap-2">
           <Icon name="ShieldCheck" fallback="CheckCircle" size={18} className="text-green-400 flex-shrink-0" />
           <p className="text-sm text-gray-100 font-medium">
-            <span className="font-bold text-white">Гарантия 3 года</span> на скважину, работаем по договору
+            <span className="font-bold text-white">Гарантия 3 года</span> на пробуренную скважину
           </p>
         </div>
         <div className="flex items-center gap-2">
