@@ -14,6 +14,21 @@
       "bodyMatcher": "partial"
     },
     {
+      "name": "Request with visit time",
+      "method": "POST",
+      "body": {
+        "name": "Иван Петров",
+        "phone": "+79991234567",
+        "service": "Бурение скважин под воду",
+        "visitTime": "Завтра"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
       "name": "Missing required fields",
       "method": "POST",
       "body": {

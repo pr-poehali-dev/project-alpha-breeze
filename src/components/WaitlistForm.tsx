@@ -17,6 +17,13 @@ interface WaitlistFormProps {
   serviceType: string;
 }
 
+const visitOptions = [
+  'Сегодня',
+  'Завтра',
+  'На этой неделе',
+  'Просто консультация',
+]
+
 const serviceLabels: Record<string, string> = {
   'well-drilling': 'бурению скважин',
   'diamond-drilling': 'алмазному бурению',
@@ -27,6 +34,7 @@ const serviceLabels: Record<string, string> = {
 export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [visitTime, setVisitTime] = useState('')
   const [agreed, setAgreed] = useState(false)
   const [isPending, setIsPending] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -45,13 +53,13 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, phone, service: serviceType }),
+        body: JSON.stringify({ name, phone, service: serviceType, visitTime }),
       })
 
       const data = await response.json()
 
       if (response.ok && data.success) {
-        reachGoal('submit_form', { service: serviceType })
+        reachGoal('submit_form', { service: serviceType, visitTime: visitTime || 'не указано' })
         reachGoal(`lead_${serviceType.replace(/-/g, '_')}`)
         setIsSubmitted(true)
         onSuccess(1)
@@ -79,6 +87,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
     setIsSubmitted(false)
     setName('')
     setPhone('')
+    setVisitTime('')
     setAgreed(false)
   }
 
@@ -95,9 +104,16 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
           <p className="text-lg text-gray-700 font-medium mb-1">
             Мы перезвоним вам в течение <span className="text-blue-600 font-bold">30 минут</span>
           </p>
-          <p className="text-base text-gray-600 mb-6">
+          <p className="text-base text-gray-600 mb-4">
             Наш специалист по {serviceLabels[serviceType] || 'услуге'} свяжется с вами для уточнения деталей
           </p>
+          {visitTime && (
+            <p className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white border border-green-200 text-sm font-semibold text-gray-800">
+              <Icon name="Clock" fallback="Circle" size={16} className="text-green-600" />
+              Выезд: {visitTime.toLowerCase()}
+            </p>
+          )}
+          {!visitTime && <div className="mb-6" />}
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <DropdownMenu>
@@ -171,7 +187,32 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             className="w-full border-0 bg-transparent text-gray-900 placeholder:text-gray-500 focus:ring-0 focus:border-transparent focus-visible:border-transparent focus:outline-none active:ring-0 active:outline-none focus-visible:ring-0 focus-visible:outline-none active:border-transparent focus-visible:ring-offset-0"
           />
         </div>
-        
+
+        <div className="rounded-xl bg-white p-4 ring-1 ring-gray-300">
+          <p className="text-sm font-semibold text-gray-900 mb-1">
+            Когда удобно принять специалиста?
+          </p>
+          <p className="text-xs text-gray-500 mb-3">
+            Необязательно — поможет нам подобрать удобное время выезда
+          </p>
+          <div className="grid grid-cols-2 gap-2">
+            {visitOptions.map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => setVisitTime(visitTime === option ? '' : option)}
+                className={`px-3 py-2.5 rounded-lg text-sm font-semibold border transition-all ${
+                  visitTime === option
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400 hover:text-blue-600'
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <label className="flex items-start gap-3 cursor-pointer">
           <input
             type="checkbox"
