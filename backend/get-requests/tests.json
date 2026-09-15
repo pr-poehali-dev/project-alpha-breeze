@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "Without password returns 401",
+      "method": "GET",
+      "expectedStatus": 401,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "With password returns list",
+      "method": "GET",
+      "headers": {
+        "X-Admin-Password": "voda2024"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

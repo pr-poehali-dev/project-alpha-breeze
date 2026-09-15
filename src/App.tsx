@@ -9,6 +9,7 @@ import WellDrilling from "./pages/WellDrilling";
 import DiamondDrilling from "./pages/DiamondDrilling";
 import Excavator from "./pages/Excavator";
 import Contracting from "./pages/Contracting";
+import Requests from "./pages/Requests";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/almaznoe-burenie" element={<DiamondDrilling />} />
           <Route path="/mini-ekskavator" element={<Excavator />} />
           <Route path="/podryadnye-raboty" element={<Contracting />} />
+          <Route path="/zayavki" element={<Requests />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
