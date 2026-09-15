@@ -2,6 +2,7 @@ import json
 import os
 import urllib.request
 import urllib.parse
+import urllib.error
 
 import psycopg2
 
@@ -30,14 +31,21 @@ def save_to_db(name: str, phone: str, service: str, visit_time: str) -> None:
 
 
 def notify_telegram(text: str) -> None:
-    token = os.environ.get('TELEGRAM_BOT_TOKEN')
-    chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
+    chat_id = (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()
     if not token or not chat_id:
+        print(f'TG skip: token={bool(token)} chat_id={bool(chat_id)}')
         return
     url = f'https://api.telegram.org/bot{token}/sendMessage'
     data = urllib.parse.urlencode({'chat_id': chat_id, 'text': text}).encode('utf-8')
     req = urllib.request.Request(url, data=data)
-    urllib.request.urlopen(req, timeout=3)
+    try:
+        resp = urllib.request.urlopen(req, timeout=5)
+        print(f'TG ok: {resp.status}')
+    except urllib.error.HTTPError as e:
+        print(f'TG HTTPError {e.code}: {e.read().decode("utf-8", "ignore")[:300]}')
+    except Exception as e:
+        print(f'TG fail: {type(e).__name__}: {e}')
 
 
 def handler(event: dict, context) -> dict:
