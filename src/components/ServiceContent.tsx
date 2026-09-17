@@ -1,6 +1,7 @@
 import Icon from "@/components/ui/icon"
 import { WaitlistForm } from "./WaitlistForm"
 import { HowWeWork } from "./HowWeWork"
+import { MaxButton } from "./MaxButton"
 import type { ServiceTab } from "./ServiceMenu"
 import reachGoal from "@/lib/metrika"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -95,8 +96,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             </div>
           </div>
 
-          <div className="flex justify-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mb-6">
             <CallDropdown location="service_card_well" />
+            <MaxButton location="service_card_well" />
           </div>
           
           <div className="grid grid-cols-2 gap-3 mb-6">
