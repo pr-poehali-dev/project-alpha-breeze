@@ -1,6 +1,18 @@
 import { useEffect, useRef, useState } from "react"
 import Icon from "@/components/ui/icon"
 import reachGoal from "@/lib/metrika"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+const phones = [
+  { raw: "79494816485", label: "+7 (949) 481-64-85" },
+  { raw: "79494816419", label: "+7 (949) 481-64-19" },
+  { raw: "79180445186", label: "+7 (918) 044-51-86" },
+]
 
 const steps = [
   {
@@ -109,16 +121,34 @@ export function HowWeWork() {
               Выезд специалиста и расчёт стоимости — бесплатно
             </p>
           </div>
-          <a
-            href="tel:+79494816485"
-            onClick={() =>
-              reachGoal("click_phone", { phone: "79494816485", location: "how_we_work" })
-            }
-            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 font-bold rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all"
-          >
-            <Icon name="Phone" size={20} />
-            Вызвать специалиста
-          </a>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                type="button"
+                className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-700 font-bold rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all focus:outline-none"
+              >
+                <Icon name="Phone" size={20} />
+                Вызвать специалиста
+                <Icon name="ChevronDown" fallback="Circle" size={18} />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-white border-gray-200 w-56">
+              {phones.map((phone) => (
+                <DropdownMenuItem key={phone.raw} asChild>
+                  <a
+                    href={`tel:+${phone.raw}`}
+                    onClick={() =>
+                      reachGoal("click_phone", { phone: phone.raw, location: "how_we_work" })
+                    }
+                    className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600 font-semibold"
+                  >
+                    <Icon name="Phone" size={16} />
+                    {phone.label}
+                  </a>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </section>
