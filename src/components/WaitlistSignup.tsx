@@ -76,10 +76,7 @@ export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSig
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-white mb-2">География оказания услуг</h3>
               <p className="text-gray-200 text-sm font-medium">
-                Донецк • Макеевка • Харцызск • Енакиево • Горловка • Ясиноватая
-              </p>
-              <p className="text-gray-300 text-xs mt-1">
-                и другие населенные пункты ДНР
+                Донецк • Макеевка • Харцызск и близлежащие районы
               </p>
             </div>
           <p className="text-gray-200 text-sm font-medium">
