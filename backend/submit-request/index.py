@@ -48,12 +48,68 @@ def notify_telegram(text: str) -> None:
         print(f'TG fail: {type(e).__name__}: {e}')
 
 
+def tg_call(token: str, api_method: str, params: dict = None) -> dict:
+    url = f'https://api.telegram.org/bot{token}/{api_method}'
+    data = urllib.parse.urlencode(params).encode('utf-8') if params else None
+    try:
+        resp = urllib.request.urlopen(urllib.request.Request(url, data=data), timeout=4)
+        return json.loads(resp.read().decode('utf-8'))
+    except urllib.error.HTTPError as e:
+        try:
+            return json.loads(e.read().decode('utf-8'))
+        except Exception:
+            return {'ok': False, 'description': f'HTTP {e.code}'}
+    except Exception as e:
+        return {'ok': False, 'description': f'{type(e).__name__}'}
+
+
+def tg_check() -> dict:
+    token = (os.environ.get('TELEGRAM_BOT_TOKEN') or '').strip()
+    chat_id = (os.environ.get('TELEGRAM_CHAT_ID') or '').strip()
+    result = {
+        'token_set': bool(token),
+        'token_format_ok': bool(token) and ':' in token and token.split(':')[0].isdigit(),
+        'chat_id_set': bool(chat_id),
+        'chat_id_format_ok': chat_id.lstrip('-').isdigit(),
+    }
+    if not result['token_format_ok']:
+        return result
+    me = tg_call(token, 'getMe')
+    result['bot_ok'] = me.get('ok', False)
+    result['bot_username'] = (me.get('result') or {}).get('username')
+    if not me.get('ok'):
+        result['bot_error'] = me.get('description')
+        return result
+    updates = tg_call(token, 'getUpdates')
+    chats = {}
+    for u in updates.get('result') or []:
+        msg = u.get('message') or u.get('my_chat_member') or {}
+        chat = msg.get('chat') or {}
+        if chat.get('id'):
+            chats[chat['id']] = chat.get('first_name') or chat.get('title') or chat.get('username') or ''
+    result['chats_who_wrote_bot'] = [{'id': k, 'name': v} for k, v in chats.items()]
+    if result['chat_id_format_ok']:
+        sent = tg_call(token, 'sendMessage', {'chat_id': chat_id, 'text': '✅ Проверка связи: бот заявок работает'})
+        result['test_message_sent'] = sent.get('ok', False)
+        if not sent.get('ok'):
+            result['send_error'] = sent.get('description')
+    return result
+
+
 def handler(event: dict, context) -> dict:
     """Приём заявок с сайта: сохраняет заявку в базу и отправляет уведомление в Telegram"""
     method = event.get('httpMethod', 'GET')
 
     if method == 'OPTIONS':
         return {'statusCode': 200, 'headers': CORS_HEADERS, 'body': ''}
+
+    qs = event.get('queryStringParameters') or {}
+    if method == 'GET' and qs.get('action') == 'tg_check':
+        return {
+            'statusCode': 200,
+            'headers': CORS_HEADERS,
+            'body': json.dumps(tg_check(), ensure_ascii=False),
+        }
 
     if method != 'POST':
         return {
