@@ -133,6 +133,17 @@ def handler(event: dict, context) -> dict:
         return {'statusCode': 200, 'headers': CORS_HEADERS, 'body': ''}
 
     qs = event.get('queryStringParameters') or {}
+    if method == 'GET' and qs.get('action') == 'email_to':
+        em = (os.environ.get('SMTP_EMAIL') or '').strip()
+        masked = ''
+        if '@' in em:
+            local, dom = em.split('@', 1)
+            masked = f'{local[:3]}***{local[-1:] if len(local) > 4 else ""}@{dom}'
+        return {
+            'statusCode': 200,
+            'headers': CORS_HEADERS,
+            'body': json.dumps({'to': masked}, ensure_ascii=False),
+        }
     if method == 'GET' and qs.get('action') == 'email_check':
         return {
             'statusCode': 200,
