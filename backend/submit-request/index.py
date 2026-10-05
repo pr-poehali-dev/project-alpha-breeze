@@ -60,7 +60,7 @@ def tg_call(token: str, api_method: str, params: dict = None) -> dict:
         except Exception:
             return {'ok': False, 'description': f'HTTP {e.code}'}
     except Exception as e:
-        return {'ok': False, 'description': f'{type(e).__name__}'}
+        return {'ok': False, 'description': f'{type(e).__name__}: {getattr(e, "reason", e)}'}
 
 
 def tg_check() -> dict:
