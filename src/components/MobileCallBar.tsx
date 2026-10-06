@@ -83,7 +83,7 @@ export function MobileCallBar() {
               MAX
             </a>
             <a
-              href="https://t.me/+79494816485"
+              href="https://t.me/+79180445186"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => reachGoal("click_telegram", { location: "mobile_sticky_bar" })}
