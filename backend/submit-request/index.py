@@ -42,7 +42,7 @@ def notify_telegram(text: str) -> None:
     data = urllib.parse.urlencode({'chat_id': chat_id, 'text': text}).encode('utf-8')
     req = urllib.request.Request(url, data=data)
     try:
-        resp = urllib.request.urlopen(req, timeout=5)
+        resp = urllib.request.urlopen(req, timeout=2)
         print(f'TG ok: {resp.status}')
     except urllib.error.HTTPError as e:
         print(f'TG HTTPError {e.code}: {e.read().decode("utf-8", "ignore")[:300]}')
@@ -69,12 +69,66 @@ def send_email(subject: str, text: str) -> dict:
     msg['From'] = email
     msg['To'] = email
     try:
-        with smtplib.SMTP_SSL(host, 465, timeout=8) as server:
+        with smtplib.SMTP_SSL(host, 465, timeout=4) as server:
             server.login(email, password)
             server.sendmail(email, [email], msg.as_string())
         return {'ok': True, 'host': host}
     except Exception as e:
         return {'ok': False, 'host': host, 'error': f'{type(e).__name__}: {str(e)[:200]}'}
+
+
+MAX_API = 'https://platform-api.max.ru'
+
+
+def max_call(method: str, path: str, payload: dict = None) -> dict:
+    token = (os.environ.get('MAX_BOT_TOKEN') or '').strip()
+    data = json.dumps(payload).encode('utf-8') if payload is not None else None
+    req = urllib.request.Request(f'{MAX_API}{path}', data=data, method=method)
+    req.add_header('Authorization', token)
+    req.add_header('Content-Type', 'application/json')
+    try:
+        resp = urllib.request.urlopen(req, timeout=3)
+        return {'ok': True, 'data': json.loads(resp.read().decode('utf-8') or '{}')}
+    except urllib.error.HTTPError as e:
+        return {'ok': False, 'error': f'HTTP {e.code}: {e.read().decode("utf-8", "ignore")[:200]}'}
+    except Exception as e:
+        return {'ok': False, 'error': f'{type(e).__name__}: {getattr(e, "reason", e)}'}
+
+
+def max_find_users() -> list:
+    res = max_call('GET', '/updates?limit=100&timeout=0')
+    users = {}
+    for u in (res.get('data') or {}).get('updates') or []:
+        msg = u.get('message') or {}
+        sender = msg.get('sender') or u.get('user') or {}
+        uid = sender.get('user_id')
+        if uid:
+            users[uid] = sender.get('name') or sender.get('first_name') or ''
+    return [{'user_id': k, 'name': v} for k, v in users.items()]
+
+
+def send_max(text: str) -> dict:
+    token = (os.environ.get('MAX_BOT_TOKEN') or '').strip()
+    if not token:
+        return {'ok': False, 'error': 'MAX_BOT_TOKEN не задан'}
+    user_id = (os.environ.get('MAX_USER_ID') or '').strip()
+    targets = [user_id] if user_id else [str(u['user_id']) for u in max_find_users()]
+    if not targets:
+        return {'ok': False, 'error': 'Никто ещё не написал боту'}
+    results = [max_call('POST', f'/messages?user_id={t}', {'text': text}) for t in targets[:3]]
+    return {'ok': any(r['ok'] for r in results), 'results': results}
+
+
+def max_check() -> dict:
+    token = (os.environ.get('MAX_BOT_TOKEN') or '').strip()
+    if not token:
+        return {'token_set': False}
+    me = max_call('GET', '/me')
+    result = {'token_set': True, 'bot_ok': me['ok'], 'bot': me.get('data') if me['ok'] else me.get('error')}
+    if me['ok']:
+        result['users_who_wrote_bot'] = max_find_users()
+        result['test'] = send_max('✅ Проверка связи: бот заявок с сайта работает')
+    return result
 
 
 def tg_call(token: str, api_method: str, params: dict = None) -> dict:
@@ -133,6 +187,12 @@ def handler(event: dict, context) -> dict:
         return {'statusCode': 200, 'headers': CORS_HEADERS, 'body': ''}
 
     qs = event.get('queryStringParameters') or {}
+    if method == 'GET' and qs.get('action') == 'max_check':
+        return {
+            'statusCode': 200,
+            'headers': CORS_HEADERS,
+            'body': json.dumps(max_check(), ensure_ascii=False),
+        }
     if method == 'GET' and qs.get('action') == 'email_to':
         em = (os.environ.get('SMTP_EMAIL') or '').strip()
         masked = ''
@@ -191,8 +251,10 @@ def handler(event: dict, context) -> dict:
     if visit_time:
         message += f'\n🕒 Когда удобно: {visit_time}'
 
+    print(f'MAX: {send_max(message)}')
     mail = send_email(f'Новая заявка: {name}, {phone}', message)
     print(f'Email: {mail}')
+    notify_telegram(message)
 
     return {
         'statusCode': 200,
