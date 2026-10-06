@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Icon from "@/components/ui/icon"
 import reachGoal from "@/lib/metrika"
+import { MAX_URL } from "@/components/MaxButton"
 
 export function MobileCallBar() {
   const [visible, setVisible] = useState(false)
@@ -70,6 +71,17 @@ export function MobileCallBar() {
               <Icon name="Phone" size={20} />
               Позвонить
             </button>
+            <a
+              href={MAX_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => reachGoal("click_max", { location: "mobile_sticky_bar" })}
+              className="flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl bg-violet-600 text-white font-bold text-base shadow-lg active:scale-95 transition-transform"
+              aria-label="Написать в MAX"
+            >
+              <Icon name="MessageCircle" fallback="Circle" size={20} />
+              MAX
+            </a>
             <a
               href="https://t.me/+79494816485"
               target="_blank"

@@ -1,7 +1,7 @@
 import Icon from "@/components/ui/icon"
 import reachGoal from "@/lib/metrika"
 
-const MAX_URL = "https://max.ru/u/f9LHodD0cOJ9_0IO5WPJI_DDElg9f8iBuK8tyXEK2zSmhTzweWY9JORgyuU"
+export const MAX_URL = "https://max.ru/u/f9LHodD0cOJ9_0IO5WPJI_DDElg9f8iBuK8tyXEK2zSmhTzweWY9JORgyuU"
 
 export function MaxButton({ location }: { location: string }) {
   return (
