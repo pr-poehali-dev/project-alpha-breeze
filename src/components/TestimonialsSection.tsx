@@ -58,7 +58,7 @@ export function TestimonialsSection() {
               </div>
             </div>
             <p className="text-xs text-gray-300 leading-relaxed">
-              Алмазное бурение под вентиляцию. Быстро, чисто, профессионально. Цена адекватная!
+              Копали котлован под фундамент. Быстро, чисто, профессионально. Цена адекватная!
             </p>
           </div>
 

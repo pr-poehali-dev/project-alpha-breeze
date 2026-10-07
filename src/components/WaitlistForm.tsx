@@ -19,7 +19,6 @@ interface WaitlistFormProps {
 
 const serviceLabels: Record<string, string> = {
   'well-drilling': 'бурению скважин',
-  'diamond-drilling': 'алмазному бурению',
   'excavator': 'услугам мини-экскаватора',
   'contracting': 'подрядным работам',
 }

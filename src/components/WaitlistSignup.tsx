@@ -15,7 +15,6 @@ interface WaitlistSignupProps {
 
 const serviceRoutes: Record<ServiceTab, string> = {
   'well-drilling': '/burenie-skvazhin',
-  'diamond-drilling': '/almaznoe-burenie',
   'excavator': '/mini-ekskavator',
   'contracting': '/podryadnye-raboty',
 }

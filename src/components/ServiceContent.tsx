@@ -153,83 +153,6 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
         </>
       )}
 
-      {activeService === 'diamond-drilling' && (
-        <>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
-            Алмазное бурение
-          </h1>
-          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
-            ТОЧНОЕ СВЕРЛЕНИЕ БЕЗ ПЫЛИ И ВИБРАЦИИ
-          </p>
-
-          <a
-            href="tel:+79494816485"
-            onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'promo_banner_diamond' })}
-            className="relative block mb-6 mt-4 p-5 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 shadow-lg border-2 border-amber-300 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer"
-          >
-            <div className="absolute top-2 right-2 bg-white text-orange-600 text-xs font-extrabold px-3 py-1 rounded-full shadow-md rotate-12 z-10">
-              АКЦИЯ
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex-shrink-0 bg-white/20 backdrop-blur-sm rounded-full p-3">
-                <Icon name="Sparkles" fallback="Star" size={36} className="text-white" />
-              </div>
-              <div className="text-left flex-1">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 drop-shadow">
-                  Уборка после работ — В ПОДАРОК!
-                </h3>
-                <p className="text-sm sm:text-base text-white/95 font-medium">
-                  Вывоз строительного мусора и пыли уже включён в стоимость
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <div className="flex justify-center mb-6">
-            <CallDropdown location="service_card_diamond" />
-          </div>
-          
-          <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 mb-6 animate-slide-in transition-transform duration-300 hover:scale-105">
-            <img 
-              src="https://cdn.poehali.dev/projects/75e3b623-6dd7-42bb-a412-70f93fe3f4f2/bucket/734a790e-6248-4c34-a16d-86aeab895172.jpg" 
-              alt="Алмазное бурение отверстий"
-              className="w-full h-auto object-contain"
-            />
-          </div>
-
-          <div className="space-y-3 mb-6">
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Home" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
-              <div className="text-left">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Отверстия под коммуникации</h3>
-                <p className="text-base text-gray-700 font-medium">Сверление в бетоне и кирпиче для труб, вентиляции, кабелей</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="DoorOpen" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
-              <div className="text-left">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Дверные и оконные проемы</h3>
-                <p className="text-base text-gray-700 font-medium">Создание проемов в несущих стенах без ущерба конструкции</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Sparkles" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
-              <div className="text-left">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Работа любой сложности</h3>
-                <p className="text-base text-gray-700 font-medium">Диаметр от 20 до 500 мм, глубина до 3 метров</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Shield" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
-              <div className="text-left">
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Безопасность и чистота</h3>
-                <p className="text-base text-gray-700 font-medium">Водяное охлаждение исключает пыль, минимальный шум</p>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
-
       {activeService === 'excavator' && (
         <>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
@@ -388,7 +311,6 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
       <WaitlistForm onSuccess={onSuccess} serviceType={
         activeService === 'well-drilling' ? 'Бурение скважин под воду' :
-        activeService === 'diamond-drilling' ? 'Алмазное бурение' :
         activeService === 'excavator' ? 'Услуги мини-экскаватора' :
         'Подрядные работы'
       } />

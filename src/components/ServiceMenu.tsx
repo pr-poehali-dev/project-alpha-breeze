@@ -1,6 +1,6 @@
 import Icon from "@/components/ui/icon"
 
-export type ServiceTab = 'well-drilling' | 'diamond-drilling' | 'excavator' | 'contracting'
+export type ServiceTab = 'well-drilling' | 'excavator' | 'contracting'
 
 interface ServiceMenuProps {
   activeService: ServiceTab
@@ -10,7 +10,6 @@ interface ServiceMenuProps {
 export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps) {
   const services = [
     { id: 'well-drilling' as ServiceTab, label: 'Бурение скважин', icon: 'Drill' },
-    { id: 'diamond-drilling' as ServiceTab, label: 'Алмазное бурение', icon: 'Sparkles' },
     { id: 'excavator' as ServiceTab, label: 'Мини-экскаватор', icon: 'Construction' },
     { id: 'contracting' as ServiceTab, label: 'Подрядные работы', icon: 'Wrench' },
   ]
@@ -18,7 +17,7 @@ export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps
   return (
     <div className="mb-8">
       <h3 className="text-2xl sm:text-3xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">УСЛУГИ</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
         {services.map((service) => (
           <button
             key={service.id}
