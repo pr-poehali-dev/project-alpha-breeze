@@ -11,7 +11,7 @@ export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps
   const services: { id: ServiceTab; label: string; icon: string; image?: string }[] = [
     { id: 'well-drilling', label: 'Бурение скважин', icon: 'Drill', image: '/icon-drill-rig.png' },
     { id: 'excavator', label: 'Мини-экскаватор', icon: 'Construction', image: '/icon-excavator.png' },
-    { id: 'contracting', label: 'Подрядные работы', icon: 'Wrench' },
+    { id: 'contracting', label: 'Подрядные работы', icon: 'HardHat', image: '/icon-helmet.png' },
   ]
 
   return (
@@ -31,7 +31,7 @@ export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps
             {service.image ? (
               <span
                 aria-hidden="true"
-                className={`block w-7 h-7 ${activeService === service.id ? 'bg-white' : 'bg-blue-600'}`}
+                className={`block w-8 h-8 ${activeService === service.id ? 'bg-white' : 'bg-blue-600'}`}
                 style={{
                   WebkitMaskImage: `url(${service.image})`,
                   maskImage: `url(${service.image})`,
