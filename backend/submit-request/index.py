@@ -59,7 +59,7 @@ SMTP_HOSTS = {
 
 def send_email(subject: str, text: str) -> dict:
     email = (os.environ.get('SMTP_EMAIL') or '').strip()
-    password = (os.environ.get('SMTP_PASSWORD') or '').strip()
+    password = ''.join((os.environ.get('SMTP_PASSWORD') or '').split())
     if not email or not password or '@' not in email:
         return {'ok': False, 'error': 'SMTP_EMAIL или SMTP_PASSWORD не заданы или неверны'}
     domain = email.split('@')[1].lower()
@@ -202,7 +202,11 @@ def handler(event: dict, context) -> dict:
         return {
             'statusCode': 200,
             'headers': CORS_HEADERS,
-            'body': json.dumps({'to': masked}, ensure_ascii=False),
+            'body': json.dumps({
+                'to': masked,
+                'pwd_len': len(''.join((os.environ.get('SMTP_PASSWORD') or '').split())),
+                'pwd_alnum': ''.join((os.environ.get('SMTP_PASSWORD') or '').split()).isalnum(),
+            }, ensure_ascii=False),
         }
     if method == 'GET' and qs.get('action') == 'email_check':
         return {
