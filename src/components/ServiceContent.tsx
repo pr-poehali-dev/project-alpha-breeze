@@ -1,3 +1,4 @@
+import ImageIcon from '@/components/ImageIcon'
 import Icon from "@/components/ui/icon"
 import { WaitlistForm } from "./WaitlistForm"
 import { HowWeWork } from "./HowWeWork"
@@ -120,21 +121,21 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
           <div className="space-y-3 mb-6">
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Search" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-search-water.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Поиск водоносного слоя</h3>
                 <p className="text-base text-gray-700 font-medium">Геологоразведка с гарантией обнаружения воды на вашем участке</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Drill" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-drill-rig.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Бурение скважины</h3>
                 <p className="text-base text-gray-700 font-medium">Малогабаритная техника для бурения на глубину до 200 метров</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border-2 border-orange-300 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Gift" fallback="Star" size={24} className="text-orange-500 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-pump.png" size={32} className="bg-orange-500 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">
                   Установка насоса <span className="text-orange-600 font-extrabold">бесплатно</span>
@@ -143,7 +144,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Droplet" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-wellhead.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Обустройство скважины</h3>
                 <p className="text-base text-gray-700 font-medium">Полное обустройство с кессоном, трубопроводом и системой фильтрации</p>
@@ -199,28 +200,28 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
           <div className="space-y-3 mb-6">
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Move" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-trench.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Рытье траншей и котлованов</h3>
                 <p className="text-base text-gray-700 font-medium">Под фундамент, коммуникации, водопровод и канализацию</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Mountain" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-leveling.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Планировка участка</h3>
                 <p className="text-base text-gray-700 font-medium">Выравнивание территории, уборка грунта и строительного мусора</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Trees" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-landscape.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Ландшафтные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Создание водоемов, террасирование склонов, подготовка под газон</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Construction" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-excavator.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Компактная техника Kubota</h3>
                 <p className="text-base text-gray-700 font-medium">Работа в ограниченном пространстве, бережное отношение к участку</p>
@@ -276,28 +277,28 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
           <div className="space-y-3 mb-6">
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="HardHat" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-bricks.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Строительные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Фундаменты, кладка, монтаж конструкций любой сложности</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="Wrench" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-pipe-wrench.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Монтажные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Установка систем водоснабжения, канализации, отопления</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="PaintBucket" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-roller.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Отделочные работы</h3>
                 <p className="text-base text-gray-700 font-medium">Штукатурка, покраска, облицовка, напольные покрытия</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 shadow-md transition-transform duration-300 hover:scale-105">
-              <Icon name="ClipboardCheck" fallback="Circle" size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+              <ImageIcon src="/icon-turnkey.png" size={32} className="bg-blue-600 mt-0.5" />
               <div className="text-left">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Работа под ключ</h3>
                 <p className="text-base text-gray-700 font-medium">Полный цикл от проекта до сдачи объекта с гарантией</p>

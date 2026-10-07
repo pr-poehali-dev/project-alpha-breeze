@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import Icon from "@/components/ui/icon"
+import ImageIcon from "@/components/ImageIcon"
 import reachGoal from "@/lib/metrika"
 import {
   DropdownMenu,
@@ -29,6 +30,7 @@ const steps = [
   },
   {
     icon: "Drill",
+    image: "/icon-drill-rig.png",
     title: "Бурение и обустройство",
     text: "Приезжаем с малогабаритной техникой, бурим, ставим обсадную трубу и насос.",
     badge: "За 1 день",
@@ -86,7 +88,11 @@ export function HowWeWork() {
             >
               <div className="relative flex sm:flex-col items-start sm:items-center gap-4 sm:gap-0 sm:text-center">
                 <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg ring-4 ring-white">
-                  <Icon name={step.icon} fallback="Circle" size={28} className="text-white" />
+                  {"image" in step && step.image ? (
+                    <ImageIcon src={step.image} size={34} className="bg-white" />
+                  ) : (
+                    <Icon name={step.icon} fallback="Circle" size={28} className="text-white" />
+                  )}
                   <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-extrabold flex items-center justify-center shadow ring-2 ring-white">
                     {i + 1}
                   </span>
