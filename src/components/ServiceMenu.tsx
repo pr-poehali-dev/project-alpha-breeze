@@ -8,10 +8,10 @@ interface ServiceMenuProps {
 }
 
 export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps) {
-  const services = [
-    { id: 'well-drilling' as ServiceTab, label: 'Бурение скважин', icon: 'Drill' },
-    { id: 'excavator' as ServiceTab, label: 'Мини-экскаватор', icon: 'Construction' },
-    { id: 'contracting' as ServiceTab, label: 'Подрядные работы', icon: 'Wrench' },
+  const services: { id: ServiceTab; label: string; icon: string; image?: string }[] = [
+    { id: 'well-drilling', label: 'Бурение скважин', icon: 'Drill', image: '/icon-drill-rig.png' },
+    { id: 'excavator', label: 'Мини-экскаватор', icon: 'Construction', image: '/icon-excavator.png' },
+    { id: 'contracting', label: 'Подрядные работы', icon: 'Wrench' },
   ]
 
   return (
@@ -28,13 +28,13 @@ export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps
                 : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
             }`}
           >
-            {service.id === 'well-drilling' ? (
+            {service.image ? (
               <span
                 aria-hidden="true"
                 className={`block w-7 h-7 ${activeService === service.id ? 'bg-white' : 'bg-blue-600'}`}
                 style={{
-                  WebkitMaskImage: 'url(/icon-drill-rig.png)',
-                  maskImage: 'url(/icon-drill-rig.png)',
+                  WebkitMaskImage: `url(${service.image})`,
+                  maskImage: `url(${service.image})`,
                   WebkitMaskSize: 'contain',
                   maskSize: 'contain',
                   WebkitMaskRepeat: 'no-repeat',
@@ -44,7 +44,7 @@ export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps
                 }}
               />
             ) : (
-              <Icon name={service.icon} fallback="Circle" size={24} className={activeService === service.id ? 'text-white' : 'text-blue-600'} />
+              <Icon name={service.icon} fallback="Circle" size={28} className={activeService === service.id ? 'text-white' : 'text-blue-600'} />
             )}
             <span className="text-xs sm:text-sm font-medium text-center">{service.label}</span>
           </button>
