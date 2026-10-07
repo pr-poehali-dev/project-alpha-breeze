@@ -28,7 +28,24 @@ export function ServiceMenu({ activeService, onServiceChange }: ServiceMenuProps
                 : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
             }`}
           >
-            <Icon name={service.icon} fallback="Circle" size={24} className={activeService === service.id ? 'text-white' : 'text-blue-600'} />
+            {service.id === 'well-drilling' ? (
+              <span
+                aria-hidden="true"
+                className={`block w-7 h-7 ${activeService === service.id ? 'bg-white' : 'bg-blue-600'}`}
+                style={{
+                  WebkitMaskImage: 'url(/icon-drill-rig.png)',
+                  maskImage: 'url(/icon-drill-rig.png)',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskPosition: 'center',
+                }}
+              />
+            ) : (
+              <Icon name={service.icon} fallback="Circle" size={24} className={activeService === service.id ? 'text-white' : 'text-blue-600'} />
+            )}
             <span className="text-xs sm:text-sm font-medium text-center">{service.label}</span>
           </button>
         ))}
