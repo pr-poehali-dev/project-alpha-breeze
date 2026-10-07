@@ -5,6 +5,7 @@ import Icon from '@/components/ui/icon'
 import { Loader2 } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
 import reachGoal from "@/lib/metrika"
+import { MAX_URL } from "@/components/MaxButton"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -207,7 +208,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
       
       <div className="text-center">
         <p className="text-gray-600 text-sm mb-3">или свяжитесь с нами</p>
-        <div className="flex gap-3 justify-center">
+        <div className="flex flex-wrap gap-3 justify-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="inline-flex items-center gap-2 px-5 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-xl transition-all duration-300">
@@ -245,6 +246,16 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
           >
             <Icon name="Send" size={20} />
             Telegram
+          </a>
+          <a
+            href={MAX_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => reachGoal('click_max', { location: 'form_contacts' })}
+            className="inline-flex items-center gap-2 px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-xl transition-all duration-300"
+          >
+            <Icon name="MessageCircle" fallback="Circle" size={20} />
+            MAX
           </a>
         </div>
       </div>
