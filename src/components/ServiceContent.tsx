@@ -56,9 +56,13 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
                   3 500 ₽ <span className="text-xl sm:text-2xl font-bold text-blue-700">/ метр</span>
                 </p>
                 <p className="text-sm text-gray-700 font-medium mt-2">
-                  Окончательная цена — после бесплатного выезда и осмотра участка
+                  Точная стоимость фиксируется после бесплатного выезда инженера и гарантированно не меняется в процессе бурения
                 </p>
               </div>
+            </div>
+            <div className="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white font-extrabold text-sm sm:text-base text-center shadow-md">
+              <span className="text-xl leading-none">🎁</span>
+              <span>Скидка на каждый метр при заказе бурения от 100 метров</span>
             </div>
           </div>
 
