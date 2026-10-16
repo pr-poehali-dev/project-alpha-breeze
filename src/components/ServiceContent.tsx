@@ -60,10 +60,6 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
                 </p>
               </div>
             </div>
-            <div className="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white font-extrabold text-sm sm:text-base text-center shadow-md">
-              <span className="text-xl leading-none">🎁</span>
-              <span>Скидка на каждый метр при заказе бурения от 100 метров</span>
-            </div>
           </div>
 
           <WaitlistForm onSuccess={onSuccess} serviceType="Бурение скважин под воду" />
