@@ -18,32 +18,9 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-center">
             Бурение скважин на воду в ДНР
           </h1>
-          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 tracking-wide text-center">
+          <p className="text-xl sm:text-2xl font-bold text-blue-600 mb-6 tracking-wide text-center">
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
-
-          <a
-            href="tel:+79494816485"
-            onClick={() => reachGoal('click_phone', { phone: '79494816485', location: 'promo_banner_well' })}
-            className="relative block mb-6 mt-4 p-5 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 shadow-lg border-2 border-amber-300 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer"
-          >
-            <div className="absolute top-2 right-2 bg-white text-orange-600 text-xs font-extrabold px-3 py-1 rounded-full shadow-md rotate-12 z-10">
-              АКЦИЯ
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex-shrink-0 bg-white/20 backdrop-blur-sm rounded-full p-3">
-                <Icon name="Gift" fallback="Star" size={36} className="text-white" />
-              </div>
-              <div className="text-left flex-1">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1 drop-shadow">
-                  Установка насоса — В ПОДАРОК!
-                </h3>
-                <p className="text-sm sm:text-base text-white/95 font-medium">
-                  При заказе бурения скважины — монтаж насосного оборудования бесплатно
-                </p>
-              </div>
-            </div>
-          </a>
 
           <div className="mb-6 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-md">
             <div className="flex flex-col items-center text-center">
@@ -62,7 +39,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
                 Цена <span className="font-bold text-blue-900">3 500 ₽ за метр — фиксированная для ДНР</span>. В неё включены обсадные трубы, фильтры и все работы по бурению.
               </p>
               <p className="max-w-xl mt-3 px-4 py-3 rounded-xl bg-white border border-orange-200 text-sm sm:text-base text-gray-800 font-medium leading-relaxed">
-                Сам насос приобретается отдельно, а его <span className="font-bold text-orange-600">монтаж и установка — бесплатно в подарок!</span> 🎁
+                Сам насос приобретается отдельно, а его <span className="font-bold text-orange-600">монтаж и установка — бесплатно в подарок!</span>
               </p>
             </div>
           </div>
