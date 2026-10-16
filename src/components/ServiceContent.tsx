@@ -22,7 +22,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             ЧИСТАЯ ВОДА ДЛЯ ВАШЕГО ДОМА ИЛИ УЧАСТКА
           </p>
 
-          <div className="mb-6 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-md">
+          <div className="relative mb-12 sm:mb-10 p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-md overflow-hidden">
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center gap-3 mb-3">
                 <div className="flex-shrink-0 bg-blue-600 rounded-full p-2.5">
@@ -38,13 +38,15 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
               <p className="max-w-xl text-sm sm:text-base text-gray-700 font-medium leading-relaxed">
                 Цена <span className="font-bold text-blue-900">3 500 ₽ за метр — фиксированная для ДНР</span>. В неё включены обсадные трубы, фильтры и все работы по бурению.
               </p>
-              <p className="max-w-xl mt-3 px-4 py-3 rounded-xl bg-white border border-orange-200 text-sm sm:text-base text-gray-800 font-medium leading-relaxed">
+              <p className="w-full max-w-xl mt-4 mb-1 px-4 py-3 rounded-xl bg-white border border-orange-200 text-sm sm:text-base text-gray-800 font-medium leading-relaxed">
                 Сам насос приобретается отдельно, а его <span className="font-bold text-orange-600">монтаж и установка — бесплатно в подарок!</span>
               </p>
             </div>
           </div>
 
-          <WaitlistForm onSuccess={onSuccess} serviceType="Бурение скважин под воду" />
+          <div className="pt-4 sm:pt-2">
+            <WaitlistForm onSuccess={onSuccess} serviceType="Бурение скважин под воду" />
+          </div>
           
           <div className="grid grid-cols-2 gap-3 mb-6">
             <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in transition-transform duration-300 hover:scale-105">
