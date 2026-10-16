@@ -59,6 +59,7 @@ export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSig
               onClick={(e) => {
                 e.preventDefault()
                 reachGoal('click_calc_hero', { service: activeService })
+                document.getElementById('name')?.focus({ preventScroll: true })
                 document.getElementById('raschet')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
               className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-lg sm:text-xl font-extrabold uppercase tracking-wide shadow-xl shadow-orange-900/30 ring-4 ring-white/30 transition-all duration-300 hover:scale-105"
