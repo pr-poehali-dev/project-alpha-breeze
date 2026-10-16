@@ -8,6 +8,7 @@ import { Reviews } from "./Reviews"
 import { ServiceFaq } from "./ServiceFaq"
 import { MobileCallBar } from "./MobileCallBar"
 import reachGoal from "@/lib/metrika"
+import Icon from "@/components/ui/icon"
 
 interface WaitlistSignupProps {
   initialService?: ServiceTab
@@ -46,6 +47,21 @@ export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSig
         <div className="w-full max-w-4xl mx-auto relative z-10">
           <ContactHeader />
           <CompanyStats />
+          <div className="flex justify-center mt-6 mb-2">
+            <a
+              href="#raschet"
+              onClick={(e) => {
+                e.preventDefault()
+                reachGoal('click_calc_hero')
+                document.getElementById('raschet')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
+              className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-lg sm:text-xl font-extrabold uppercase tracking-wide shadow-xl shadow-orange-900/30 ring-4 ring-white/30 transition-all duration-300 hover:scale-105"
+            >
+              <Icon name="Calculator" fallback="Circle" size={26} />
+              Рассчитать стоимость бурения
+              <Icon name="ArrowDown" fallback="ChevronDown" size={22} className="transition-transform group-hover:translate-y-1" />
+            </a>
+          </div>
         </div>
       </header>
       <div className="flex-1 bg-white">

@@ -142,7 +142,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
   }
 
   return (
-    <div className="w-full space-y-4 mb-8">
+    <div id="raschet" className="w-full space-y-4 mb-8 scroll-mt-6">
       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 uppercase text-center">
         Бесплатный расчёт стоимости
       </h3>
