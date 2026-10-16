@@ -56,7 +56,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
                   3 500 ₽ <span className="text-xl sm:text-2xl font-bold text-blue-700">/ метр</span>
                 </p>
                 <p className="text-sm text-gray-700 font-medium mt-2">
-                  Точная стоимость фиксируется после бесплатного выезда инженера и гарантированно не меняется в процессе бурения
+                  Цена фиксированная. В неё уже включены обсадные трубы, фильтры и все работы по бурению (насос приобретается отдельно). Бесплатный выезд инженера нужен только для выбора места под скважину, цена за метр не изменится
                 </p>
               </div>
             </div>
