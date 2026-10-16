@@ -208,10 +208,10 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
       
       <div className="text-center">
         <p className="text-gray-600 text-sm mb-3">или свяжитесь с нами</p>
-        <div className="flex flex-wrap gap-3 justify-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-md sm:max-w-xl mx-auto">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="inline-flex items-center gap-2 px-5 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-xl transition-all duration-300">
+              <button className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-xl transition-all duration-300">
                 <Icon name="Phone" size={20} />
                 Позвонить
               </button>
@@ -242,7 +242,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => reachGoal('click_telegram')}
-            className="inline-flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300"
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300"
           >
             <Icon name="Send" size={20} />
             Telegram
@@ -252,7 +252,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => reachGoal('click_max', { location: 'form_contacts' })}
-            className="inline-flex items-center gap-2 px-5 py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-xl transition-all duration-300"
+            className="col-span-2 sm:col-span-1 w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-xl transition-all duration-300"
           >
             <Icon name="MessageCircle" fallback="Circle" size={20} />
             MAX
