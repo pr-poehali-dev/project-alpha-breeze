@@ -20,6 +20,12 @@ const serviceRoutes: Record<ServiceTab, string> = {
   'contracting': '/podryadnye-raboty',
 }
 
+const heroCtaLabels: Record<ServiceTab, string> = {
+  'well-drilling': 'Рассчитать стоимость бурения',
+  'excavator': 'Рассчитать стоимость работ экскаватора',
+  'contracting': 'Рассчитать стоимость подрядных работ',
+}
+
 export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSignupProps) {
   const [waitlistCount, setWaitlistCount] = useState(47)
   const [activeService, setActiveService] = useState<ServiceTab>(initialService)
@@ -52,14 +58,14 @@ export function WaitlistSignup({ initialService = 'well-drilling' }: WaitlistSig
               href="#raschet"
               onClick={(e) => {
                 e.preventDefault()
-                reachGoal('click_calc_hero')
+                reachGoal('click_calc_hero', { service: activeService })
                 document.getElementById('raschet')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
               className="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-lg sm:text-xl font-extrabold uppercase tracking-wide shadow-xl shadow-orange-900/30 ring-4 ring-white/30 transition-all duration-300 hover:scale-105"
             >
-              <Icon name="Calculator" fallback="Circle" size={26} />
-              Рассчитать стоимость бурения
-              <Icon name="ArrowDown" fallback="ChevronDown" size={22} className="transition-transform group-hover:translate-y-1" />
+              <Icon name="Calculator" fallback="Circle" size={26} className="flex-shrink-0" />
+              {heroCtaLabels[activeService]}
+              <Icon name="ArrowDown" fallback="ChevronDown" size={22} className="flex-shrink-0 transition-transform group-hover:translate-y-1" />
             </a>
           </div>
         </div>
