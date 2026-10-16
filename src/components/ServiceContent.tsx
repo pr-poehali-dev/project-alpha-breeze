@@ -2,43 +2,8 @@ import ImageIcon from '@/components/ImageIcon'
 import Icon from "@/components/ui/icon"
 import { WaitlistForm } from "./WaitlistForm"
 import { HowWeWork } from "./HowWeWork"
-import { MaxButton } from "./MaxButton"
 import type { ServiceTab } from "./ServiceMenu"
 import reachGoal from "@/lib/metrika"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-
-function CallDropdown({ location }: { location: string }) {
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
-          <Icon name="Phone" size={20} />
-          Позвонить
-        </button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="bg-white border-gray-200">
-        <DropdownMenuItem asChild>
-          <a href="tel:+79494816485" onClick={() => reachGoal('click_phone', { phone: '79494816485', location })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
-            <Icon name="Phone" size={16} />
-            +7 (949) 481-64-85
-          </a>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <a href="tel:+79494816419" onClick={() => reachGoal('click_phone', { phone: '79494816419', location })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
-            <Icon name="Phone" size={16} />
-            +7 (949) 481-64-19
-          </a>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <a href="tel:+79180445186" onClick={() => reachGoal('click_phone', { phone: '79180445186', location })} className="flex items-center gap-2 cursor-pointer text-gray-900 hover:text-blue-600">
-            <Icon name="Phone" size={16} />
-            +7 (918) 044-51-86
-          </a>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
 
 interface ServiceContentProps {
   activeService: ServiceTab
@@ -97,10 +62,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mb-6">
-            <CallDropdown location="service_card_well" />
-            <MaxButton location="service_card_well" />
-          </div>
+          <WaitlistForm onSuccess={onSuccess} serviceType="Бурение скважин под воду" />
           
           <div className="grid grid-cols-2 gap-3 mb-6">
             <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md animate-slide-in transition-transform duration-300 hover:scale-105">
@@ -186,9 +148,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             </div>
           </a>
 
-          <div className="flex justify-center mb-6">
-            <CallDropdown location="service_card_excavator" />
-          </div>
+          <WaitlistForm onSuccess={onSuccess} serviceType="Услуги мини-экскаватора" />
           
           <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in transition-transform duration-300 hover:scale-105">
             <img 
@@ -263,9 +223,7 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
             </div>
           </a>
 
-          <div className="flex justify-center mb-6">
-            <CallDropdown location="service_card_contracting" />
-          </div>
+          <WaitlistForm onSuccess={onSuccess} serviceType="Подрядные работы" />
           
           <div className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md mb-6 animate-slide-in">
             <img 
@@ -310,11 +268,6 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
 
       {activeService === 'well-drilling' && <HowWeWork />}
 
-      <WaitlistForm onSuccess={onSuccess} serviceType={
-        activeService === 'well-drilling' ? 'Бурение скважин под воду' :
-        activeService === 'excavator' ? 'Услуги мини-экскаватора' :
-        'Подрядные работы'
-      } />
     </div>
   )
 }
