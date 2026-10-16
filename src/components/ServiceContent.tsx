@@ -46,19 +46,24 @@ export function ServiceContent({ activeService, onSuccess }: ServiceContentProps
           </a>
 
           <div className="mb-6 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-md">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center sm:text-left">
-              <div className="flex-shrink-0 bg-blue-600 rounded-full p-3">
-                <Icon name="Wallet" fallback="Circle" size={32} className="text-white" />
+            <div className="flex flex-col items-center text-center">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="flex-shrink-0 bg-blue-600 rounded-full p-2.5">
+                  <Icon name="Wallet" fallback="Circle" size={24} className="text-white" />
+                </div>
+                <p className="text-sm font-bold text-blue-700 uppercase tracking-wide">Стоимость бурения</p>
               </div>
-              <div>
-                <p className="text-sm font-bold text-blue-700 uppercase tracking-wide mb-1">Стоимость бурения</p>
-                <p className="text-3xl sm:text-4xl font-extrabold text-blue-900 leading-none">
-                  3 500 ₽ <span className="text-xl sm:text-2xl font-bold text-blue-700">/ метр</span>
-                </p>
-                <p className="text-sm text-gray-700 font-medium mt-2">
-                  Цена фиксированная. В неё уже включены обсадные трубы, фильтры и все работы по бурению (насос приобретается отдельно). Бесплатный выезд инженера нужен только для выбора места под скважину, цена за метр не изменится
-                </p>
-              </div>
+              <p className="flex items-baseline justify-center gap-2 text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight">
+                3 500 ₽
+                <span className="text-xl sm:text-2xl font-bold text-blue-700">/ метр</span>
+              </p>
+              <div className="w-16 h-1 rounded-full bg-blue-300 my-4" />
+              <p className="max-w-xl text-sm sm:text-base text-gray-700 font-medium leading-relaxed">
+                Цена <span className="font-bold text-blue-900">3 500 ₽ за метр — фиксированная для ДНР</span>. В неё включены обсадные трубы, фильтры и все работы по бурению.
+              </p>
+              <p className="max-w-xl mt-3 px-4 py-3 rounded-xl bg-white border border-orange-200 text-sm sm:text-base text-gray-800 font-medium leading-relaxed">
+                Сам насос приобретается отдельно, а его <span className="font-bold text-orange-600">монтаж и установка — бесплатно в подарок!</span> 🎁
+              </p>
             </div>
           </div>
 
