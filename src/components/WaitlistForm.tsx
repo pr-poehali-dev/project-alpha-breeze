@@ -6,6 +6,8 @@ import { Loader2 } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
 import reachGoal from "@/lib/metrika"
 import telegramLink from "@/lib/telegram"
+import { SmartCaptcha } from "@yandex/smart-captcha"
+import { SUBMIT_URL, useCaptchaKey } from "@/lib/captcha"
 import { MAX_URL } from "@/components/MaxButton"
 import {
   DropdownMenu,
@@ -32,21 +34,33 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
   const [isPending, setIsPending] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const { toast } = useToast()
+  const captchaKey = useCaptchaKey()
+  const [captchaToken, setCaptchaToken] = useState('')
+  const [captchaReset, setCaptchaReset] = useState(0)
+
+  const resetCaptcha = () => {
+    setCaptchaToken('')
+    setCaptchaReset((n) => n + 1)
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if (!name || !phone || !agreed) return
+    if (captchaKey && !captchaToken) {
+      toast({ title: "Подтвердите, что вы не робот", duration: 4000 })
+      return
+    }
 
     setIsPending(true)
 
     try {
-      const response = await fetch('https://functions.poehali.dev/59d997b0-43b2-4f71-a432-d0a55ec2ec5d', {
+      const response = await fetch(SUBMIT_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, phone, service: serviceType }),
+        body: JSON.stringify({ name, phone, service: serviceType, captchaToken }),
       })
 
       const data = await response.json()
@@ -73,11 +87,13 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
       })
     } finally {
       setIsPending(false)
+      resetCaptcha()
     }
   }
 
   const handleNewRequest = () => {
     setIsSubmitted(false)
+    resetCaptcha()
     setName('')
     setPhone('')
     setAgreed(false)
@@ -194,9 +210,21 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
           </span>
         </label>
 
+        {captchaKey && (
+          <div className="flex justify-center min-h-[102px]">
+            <SmartCaptcha
+              key={captchaReset}
+              sitekey={captchaKey}
+              language="ru"
+              onSuccess={setCaptchaToken}
+              onTokenExpired={() => setCaptchaToken('')}
+            />
+          </div>
+        )}
+
         <Button
           type="submit"
-          disabled={isPending || !agreed}
+          disabled={isPending || !agreed || (!!captchaKey && !captchaToken)}
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isPending ? (

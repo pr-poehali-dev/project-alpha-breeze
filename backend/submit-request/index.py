@@ -77,6 +77,27 @@ def send_email(subject: str, text: str) -> dict:
         return {'ok': False, 'host': host, 'error': f'{type(e).__name__}: {str(e)[:200]}'}
 
 
+def captcha_client_key() -> str:
+    return (os.environ.get('SMARTCAPTCHA_CLIENT_KEY') or '').strip()
+
+
+def check_captcha(token: str, ip: str) -> bool:
+    secret = (os.environ.get('SMARTCAPTCHA_SERVER_KEY') or '').strip()
+    if not secret:
+        return True
+    if not token:
+        return False
+    params = urllib.parse.urlencode({'secret': secret, 'token': token, 'ip': ip or ''})
+    try:
+        resp = urllib.request.urlopen(f'https://smartcaptcha.yandexcloud.net/validate?{params}', timeout=2)
+        data = json.loads(resp.read().decode('utf-8') or '{}')
+        print(f'Captcha: {data}')
+        return data.get('status') == 'ok'
+    except Exception as e:
+        print(f'Captcha check unavailable, pass: {type(e).__name__}: {e}')
+        return True
+
+
 MAX_API = 'https://platform-api.max.ru'
 
 
@@ -187,6 +208,12 @@ def handler(event: dict, context) -> dict:
         return {'statusCode': 200, 'headers': CORS_HEADERS, 'body': ''}
 
     qs = event.get('queryStringParameters') or {}
+    if method == 'GET' and qs.get('action') == 'captcha_config':
+        return {
+            'statusCode': 200,
+            'headers': CORS_HEADERS,
+            'body': json.dumps({'clientKey': captcha_client_key()}),
+        }
     if method == 'GET' and qs.get('action') == 'max_check':
         return {
             'statusCode': 200,
@@ -242,6 +269,15 @@ def handler(event: dict, context) -> dict:
             'statusCode': 400,
             'headers': CORS_HEADERS,
             'body': json.dumps({'error': 'Имя и телефон обязательны'}),
+        }
+
+    ip = ((event.get('requestContext') or {}).get('identity') or {}).get('sourceIp', '')
+    if not check_captcha((body.get('captchaToken') or '').strip(), ip):
+        print(f'Captcha rejected: ip={ip}')
+        return {
+            'statusCode': 400,
+            'headers': CORS_HEADERS,
+            'body': json.dumps({'error': 'Подтвердите, что вы не робот', 'captcha': True}, ensure_ascii=False),
         }
 
     saved = False

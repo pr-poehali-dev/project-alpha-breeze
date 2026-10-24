@@ -1,6 +1,16 @@
 {
   "tests": [
     {
+      "name": "Captcha config",
+      "method": "GET",
+      "path": "/?action=captcha_config",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "clientKey": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
       "name": "Valid request submission",
       "method": "POST",
       "body": {
