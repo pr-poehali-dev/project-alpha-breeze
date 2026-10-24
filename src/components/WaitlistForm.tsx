@@ -5,6 +5,7 @@ import Icon from '@/components/ui/icon'
 import { Loader2 } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
 import reachGoal from "@/lib/metrika"
+import telegramLink from "@/lib/telegram"
 import { MAX_URL } from "@/components/MaxButton"
 import {
   DropdownMenu,
@@ -238,7 +239,7 @@ export function WaitlistForm({ onSuccess, serviceType }: WaitlistFormProps) {
             </DropdownMenuContent>
           </DropdownMenu>
           <a
-            href="https://t.me/+79180445186"
+            href={telegramLink(serviceType)}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => reachGoal('click_telegram')}

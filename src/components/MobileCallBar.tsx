@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Icon from "@/components/ui/icon"
 import reachGoal from "@/lib/metrika"
+import telegramLink from "@/lib/telegram"
 import { MAX_URL } from "@/components/MaxButton"
 
 export function MobileCallBar() {
@@ -83,7 +84,7 @@ export function MobileCallBar() {
               MAX
             </a>
             <a
-              href="https://t.me/+79180445186"
+              href={telegramLink()}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => reachGoal("click_telegram", { location: "mobile_sticky_bar" })}
